@@ -3,15 +3,23 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:nft/constants/app.theme.dart';
 import 'package:nft/screens/auth/sign_in.dart';
+import 'package:nft/screens/auth/sign_up.dart';
 
-void main() => runApp(
-  DevicePreview(
-    enabled: !kReleaseMode,
-    builder: (context) => MyApp(), // Wrap your app
-  ),
-);
+
+bool darkMode = false;
+void main() async {
+  await GetStorage.init();
+  runApp(
+    DevicePreview(
+      enabled: !kReleaseMode,
+      builder: (context) => MyApp(), // Wrap your app
+    ),
+  );
+}
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -25,18 +33,17 @@ class MyApp extends StatelessWidget {
         splitScreenMode: true,
         builder: (context, child) {
           return GetMaterialApp(
-              builder: DevicePreview.appBuilder,
-              theme: lightTheme,
-              darkTheme: darkTheme,
-
+              theme: ThemesService().lightTheme,
+              darkTheme: ThemesService().darkTheme,
+              themeMode: ThemesService().getThemeMode(),
               debugShowCheckedModeBanner: false,
+              title: 'Flutter Demo',
               // darkTheme: ThemeData.dark(),
               // home: SplashScreen()
-              home: SignIn()
+              home: SignUp()
 
 
           );
         });
   }
 }
-
