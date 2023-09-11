@@ -6,7 +6,7 @@ final darkTheme = ThemeData(
   colorScheme: ColorScheme.fromSwatch().copyWith(
     secondary: AppColors.white,
     brightness: Brightness.dark,
-    background: AppColors.black,
+    background: Color(0xFF191B23),
   ),
   indicatorColor: AppColors.purple,
   dividerColor: Colors.white54,

@@ -24,10 +24,10 @@ class IconButtonWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(img,width: 23.44.w,height: 23.29.h,),
-          SizedBox(width:3.w ,),
+          SizedBox(width:10.w ,),
           Text(name,style: TextStyle(
               fontSize:18.sp,
-              fontWeight: FontWeight.bold
+              fontWeight: FontWeight.w600
           ),)
         ],
       ),
