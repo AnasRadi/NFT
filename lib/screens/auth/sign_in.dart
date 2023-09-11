@@ -1,5 +1,8 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:nft/widget/text_field_widget.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nft/widget/button_widget.dart';
+import 'package:nft/widget/icon_button_widget.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({super.key});
@@ -9,13 +12,36 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
+  late TextEditingController _phoneTextController;
+  late TextEditingController _passwordTextController;
+
   String? _passwordError;
   bool _showPassword = false;
+  late TapGestureRecognizer _tapGestureRecognizer;
+
+  @override
+  void initState() {
+    super.initState();
+    _phoneTextController = TextEditingController();
+    _passwordTextController = TextEditingController();
+
+    _tapGestureRecognizer = TapGestureRecognizer()..onTap = _navigateToRegister;
+    // _tapGestureRecognizer.onTap = _navigateToRegister;
+  }
+
+  void _navigateToRegister() =>
+      Navigator.pushNamed(context, '/register_screen');
+
+  @override
+  void dispose() {
+    _phoneTextController.dispose();
+    _passwordTextController.dispose();
+    _tapGestureRecognizer.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-
-
-
     return SafeArea(
       child: Scaffold(
         body: Column(
@@ -32,7 +58,7 @@ class _SignInState extends State<SignIn> {
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
                     label: SizedBox(
-                      width: 120,
+                      width: 120.w,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,34 +72,33 @@ class _SignInState extends State<SignIn> {
                       ),
                     ),
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(
-                        width: 2,
+                      borderRadius: BorderRadius.circular(10.r),
+                      borderSide:  BorderSide(
+                        width: 2.w,
                         color: Colors.black,
                       ),
                     ),
                     enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(
-                        width: 2,
+                      borderRadius: BorderRadius.circular(10.r),
+                      borderSide:  BorderSide(
+                        width: 2.w,
                         color: Colors.black,
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(
-                        width: 2,
+                      borderRadius: BorderRadius.circular(10.r),
+                      borderSide:  BorderSide(
+                        width: 2.w,
                         color: Colors.black,
                       ),
                     ),
                     errorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(
-                        width: 1,
+                      borderRadius: BorderRadius.circular(10.r),
+                      borderSide:  BorderSide(
+                        width: 2.w,
                         color: Colors.red,
                       ),
-                    )
-                ),
+                    )),
               ),
             ),
             Padding(
@@ -82,11 +107,10 @@ class _SignInState extends State<SignIn> {
                 keyboardType: TextInputType.text,
                 obscureText: !_showPassword,
                 expands: false,
-
                 decoration: InputDecoration(
                     errorText: _passwordError,
                     label: SizedBox(
-                      width: 120,
+                      width: 120.w,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -100,9 +124,9 @@ class _SignInState extends State<SignIn> {
                       ),
                     ),
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(
-                        width: 2,
+                      borderRadius: BorderRadius.circular(10.r),
+                      borderSide:  BorderSide(
+                        width: 2.w,
                         color: Colors.black,
                       ),
                     ),
@@ -113,33 +137,67 @@ class _SignInState extends State<SignIn> {
                         });
                       },
                       icon: Icon(
-                        _showPassword ? Icons.visibility_off : Icons.visibility,color: Colors.black,
+                        _showPassword ? Icons.visibility_off : Icons.visibility,
+                        color: Colors.black,
                       ),
                     ),
                     enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(
-                        width: 2,
+                      borderRadius: BorderRadius.circular(10.r),
+                      borderSide:  BorderSide(
+                        width: 2.w,
                         color: Colors.black,
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(
-                        width: 2,
+                      borderRadius: BorderRadius.circular(10.r),
+                      borderSide:  BorderSide(
+                        width: 2.w,
                         color: Colors.black,
                       ),
                     ),
                     errorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(
-                        width: 1,
+                      borderRadius: BorderRadius.circular(10.r),
+                      borderSide:  BorderSide(
+                        width: 2.w,
                         color: Colors.red,
                       ),
+                    )),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 5.h, left: 20.w),
+              child: RichText(
+                text: TextSpan(
+                  text: 'Forget password ? ',
+                  style: TextStyle(
+                    color: Color(0xff9391A4),
+                    fontSize: 14.sp,
+                  ),
+                  children: [
+                    // TextSpan(text: ' '),
+                    TextSpan(
+                      text: 'Tap here',
+                      recognizer: _tapGestureRecognizer,
+                      style: TextStyle(
+                        color: Color(0xff7B61FF),
+                        fontSize: 14.sp
+                      ),
                     )
+                  ],
                 ),
               ),
             ),
+            ButtonWidget(name: 'Log in'),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButtonWidget(name: 'Google',img: 'assets/icon/google.png',),
+                IconButtonWidget(name: 'Apple',img: 'assets/icon/appstore.png',),
+              ],
+            )
+
+
 
           ],
         ),
