@@ -192,8 +192,12 @@ class _SignInState extends State<SignIn> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                SizedBox(width: 15.w,),
                 IconButtonWidget(name: 'Google',img: 'assets/icon/google.png',),
+                SizedBox(width: 5.w,),
                 IconButtonWidget(name: 'Apple',img: 'assets/icon/appstore.png',),
+                SizedBox(width: 15.w,),
+
               ],
             )
 
