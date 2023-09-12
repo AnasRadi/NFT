@@ -4,7 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class ButtonWidget extends StatelessWidget {
   String name;
   final void Function() onPressed;
-   ButtonWidget({
+
+  ButtonWidget({
     super.key,
     required this.name,
     required this.onPressed,
@@ -19,16 +20,14 @@ class ButtonWidget extends StatelessWidget {
         height: 60.h,
         child: ElevatedButton(
           onPressed: onPressed,
-          child: Text(name,style: TextStyle(
-            fontSize: 18.sp
-          ),),
-          style: ElevatedButton.styleFrom(
-              primary: Color(0xFF191B23),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16.r)
-              )
+          child: Text(
+            name,
+            style: TextStyle(fontSize: 18.sp),
           ),
-
+          style: ElevatedButton.styleFrom(
+              backgroundColor: Color(0xFF191B23),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16.r))),
         ),
       ),
     );

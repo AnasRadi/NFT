@@ -7,6 +7,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:nft/constants/app.theme.dart';
 import 'package:nft/screens/auth/sign_in.dart';
 import 'package:nft/screens/auth/sign_up.dart';
+import 'package:nft/screens/bn_screen.dart';
 
 
 bool darkMode = false;
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
               title: 'Flutter Demo',
               // darkTheme: ThemeData.dark(),
               // home: SplashScreen()
-              home: SignIn()
+              home: BnScreen()
 
 
           );
