@@ -3,9 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ButtonWidget extends StatelessWidget {
   String name;
+  final void Function() onPressed;
    ButtonWidget({
     super.key,
-    required this.name
+    required this.name,
+    required this.onPressed,
   });
 
   @override
@@ -16,7 +18,7 @@ class ButtonWidget extends StatelessWidget {
         width: double.infinity,
         height: 60.h,
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: onPressed,
           child: Text(name,style: TextStyle(
             fontSize: 18.sp
           ),),

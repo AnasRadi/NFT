@@ -67,7 +67,7 @@ class _SignInState extends State<SignIn> {
               child: Text(
                 'Log in',
                 style: GoogleFonts.roboto(
-                    fontSize: 22.sp,
+                    fontSize: 26.sp,
                     color: AppColors.black,
                     fontWeight: FontWeight.bold),
               ),
@@ -209,7 +209,7 @@ class _SignInState extends State<SignIn> {
             SizedBox(
               height: 25.h,
             ),
-            ButtonWidget(name: 'Log in'),
+            ButtonWidget(name: 'Log in',onPressed: (){},),
             SizedBox(
               height: 25.h,
             ),
