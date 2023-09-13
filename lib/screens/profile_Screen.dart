@@ -18,7 +18,7 @@ class _ProfileScreenState extends State<ProfileScreen>with SingleTickerProviderS
   void initState() {
     // TODO: implement initState
     super.initState();
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(length: 4, vsync: this);
   }
 
   @override
@@ -173,13 +173,14 @@ class _ProfileScreenState extends State<ProfileScreen>with SingleTickerProviderS
           ),
           Container(
             child: SizedBox(
-              height: 250,
+              height: 1000,
               child: TabBarView(
                 controller: _tabController,
                 children: [
                   //Created
                   GridView.builder(
-                      scrollDirection: Axis.vertical,
+                    physics: NeverScrollableScrollPhysics(),
+
                       shrinkWrap: true,
                       itemCount: 6,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -206,6 +207,8 @@ class _ProfileScreenState extends State<ProfileScreen>with SingleTickerProviderS
                       }),
                   //Owned
                   GridView.builder(
+                      physics: NeverScrollableScrollPhysics(),
+
                       scrollDirection: Axis.vertical,
                       shrinkWrap: true,
                       itemCount: 6,
@@ -233,6 +236,8 @@ class _ProfileScreenState extends State<ProfileScreen>with SingleTickerProviderS
                       }),
                   //Collection
                   GridView.builder(
+                      physics: NeverScrollableScrollPhysics(),
+
                       scrollDirection: Axis.vertical,
                       shrinkWrap: true,
                       itemCount: 6,
@@ -260,6 +265,8 @@ class _ProfileScreenState extends State<ProfileScreen>with SingleTickerProviderS
                       }),
                   //Splits
                   GridView.builder(
+                      physics: NeverScrollableScrollPhysics(),
+
                       scrollDirection: Axis.vertical,
                       shrinkWrap: true,
                       itemCount: 6,

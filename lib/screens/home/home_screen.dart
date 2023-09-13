@@ -770,7 +770,7 @@ class _HomeScreenState extends State<HomeScreen>
                             Positioned(
                               top: 214.h,
                               left: 186.w,
-                              right: 16.w,
+                              right: 14.w,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -813,7 +813,7 @@ class _HomeScreenState extends State<HomeScreen>
                   itemCount: 4),
             ),
             SizedBox(
-              height: 5.h,
+              height: 8.h,
             )
           ],
         ),
