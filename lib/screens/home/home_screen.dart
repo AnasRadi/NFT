@@ -44,6 +44,12 @@ class _HomeScreenState extends State<HomeScreen>
         elevation: 0,
         actions: [
           PopupMenuButton<String>(
+            shape: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(15.r),
+              borderSide: BorderSide(
+                color: Colors.white
+              )
+            ),
             onSelected: (value) {
               if (value != _content) {
                 setState(() {
@@ -332,6 +338,7 @@ class _HomeScreenState extends State<HomeScreen>
                 tabs: [
                   Tab(
                     text: '1 day',
+
                   ),
                   Tab(
                     text: '7 day',
@@ -360,8 +367,9 @@ class _HomeScreenState extends State<HomeScreen>
                             height: 78.h,
                             width: 367.w,
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10.r),
-                                color: Colors.white),
+                                borderRadius: BorderRadius.circular(50.r),
+                                color: Colors.white
+                            ),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [

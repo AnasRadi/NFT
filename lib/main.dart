@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
               title: 'Flutter Demo',
               // darkTheme: ThemeData.dark(),
               // home: SplashScreen()
-              home: BnScreen()
+              home: SignIn()
 
 
           );

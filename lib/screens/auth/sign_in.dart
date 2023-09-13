@@ -6,6 +6,8 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nft/constants/app.colors.dart';
 import 'package:nft/screens/auth/sign_up.dart';
+import 'package:nft/screens/bn_screen.dart';
+import 'package:nft/screens/home/home_screen.dart';
 import 'package:nft/widget/button_widget.dart';
 import 'package:nft/widget/icon_button_widget.dart';
 
@@ -209,7 +211,7 @@ class _SignInState extends State<SignIn> {
             SizedBox(
               height: 25.h,
             ),
-            ButtonWidget(name: 'Log in',onPressed: (){},),
+            ButtonWidget(name: 'Log in',onPressed: ()=>Get.to(BnScreen()),),
             SizedBox(
               height: 25.h,
             ),
