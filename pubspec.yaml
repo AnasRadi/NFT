@@ -41,6 +41,12 @@ dependencies:
   get: ^4.6.6
   get_storage: ^2.1.1
   dotted_border: ^2.0.0+3
+  video_player: ^2.7.1
+  progress_stepper: ^1.0.0
+
+
+
+
 
 
 

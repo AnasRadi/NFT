@@ -12,20 +12,72 @@ class CreateProduct extends StatefulWidget {
 }
 
 class _CreateProductState extends State<CreateProduct> {
+  int _counter = 0;
+  String _content = 'Hi';
   String? _chosenValue;
   @override
   Widget build(BuildContext context) {
-    TextStyle defaultStyle = GoogleFonts.roboto(color: AppColors.grey2, fontSize: 16.0);
-    TextStyle linkStyle = GoogleFonts.roboto(color: AppColors.purple,fontSize: 16.0);
+    TextStyle defaultStyle = GoogleFonts.roboto(color: AppColors.grey2, fontSize: 16.0.sp);
+    TextStyle linkStyle = GoogleFonts.roboto(color: AppColors.purple,fontSize: 16.0.sp);
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.grey.shade100,
         appBar: AppBar(
-          title: Text('Create NFT',style: GoogleFonts.roboto(color: Colors.black,fontSize: 14),),
+          title: Text('Create NFT',style: GoogleFonts.roboto(color: Colors.black,fontSize: 14.sp),),
           centerTitle: true,
           elevation: 0,
           backgroundColor: Colors.white,
+          iconTheme: IconThemeData.fallback(),
+          automaticallyImplyLeading: true,
           leading: Image.asset('assets/icon/back.png',),
+          actions: [
+            PopupMenuButton<String>(
+              shape: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15.r),
+                  borderSide: BorderSide(
+                      color: Colors.white
+                  )
+              ),
+              onSelected: (value) {
+                if (value != _content) {
+                  setState(() {
+                    _content = value;
+                    _counter = 0;
+                  });
+                }
+              },
+              itemBuilder: (context) {
+                return [
+                  PopupMenuItem(
+                    child: Text('Hi',style: GoogleFonts.roboto(),),
+                    value: 'Hi',
+                    textStyle: GoogleFonts.roboto(
+                      color: Colors.black,
+                    ),
+                  ),
+                  PopupMenuDivider(),
+                  PopupMenuItem(
+                    child: Text('hello'),
+                    value: 'hello',
+                    textStyle: GoogleFonts.roboto(
+                      color: Colors.black,
+                    ),
+                  ),
+                  PopupMenuDivider(),
+                  PopupMenuItem(
+                    child: Text('hello hi'),
+                    value: 'hello hi',
+                    textStyle: GoogleFonts.roboto(
+                      color: Colors.black,
+                    ),
+                  )
+                ];
+              },
+            )
+          ],
+
+
+
         ),
         body: ListView(
           children: [
@@ -38,11 +90,11 @@ class _CreateProductState extends State<CreateProduct> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Create an NFT',style: GoogleFonts.roboto(fontSize: 20,fontWeight: FontWeight.bold),),
-                      SizedBox(height: 16,),
+                      Text('Create an NFT',style: GoogleFonts.roboto(fontSize: 20.sp,fontWeight: FontWeight.bold),),
+                      SizedBox(height: 16.h,),
                       Text('Import image, video or audio',style: GoogleFonts.roboto(fontSize: 16,fontWeight: FontWeight.bold),),
-                      SizedBox(height: 16,),
-                      Text('File types supported: JPGM PNG, IF, SVG, MP3, WAV, MP4, MAX size 50 MB',style: GoogleFonts.roboto(fontSize: 14,color: AppColors.grey2),),
+                      SizedBox(height: 16.h,),
+                      Text('File types supported: JPGM PNG, IF, SVG, MP3, WAV, MP4, MAX size 50 MB',style: GoogleFonts.roboto(fontSize: 14.sp,color: AppColors.grey2),),
                     ],
                   ),
                 ),
@@ -56,8 +108,8 @@ class _CreateProductState extends State<CreateProduct> {
                       5,
                     ],
                     child: SizedBox(
-                      height: 200,
-                      width: 350,
+                      height: 200.h,
+                      width: 350.w,
                       child: Container(
                         padding: const EdgeInsets.all(
                             16.0),
@@ -176,7 +228,7 @@ class _CreateProductState extends State<CreateProduct> {
                 Padding(
                   padding: const EdgeInsets.all(16.0),
                     child: SizedBox(
-                      height: 70,
+                      height: 70.h,
                       child: Container(
                         child: InputDecorator(
                           decoration: InputDecoration(
@@ -208,7 +260,7 @@ class _CreateProductState extends State<CreateProduct> {
                               'BNB',
                               style: GoogleFonts.roboto(
                                   color: Colors.black,
-                                  fontSize: 14,
+                                  fontSize: 14.sp,
                                   fontWeight: FontWeight.w500),
                             ),
                           ),
@@ -237,7 +289,7 @@ class _CreateProductState extends State<CreateProduct> {
                   ),
                 ),
                 Padding(padding: const EdgeInsets.all(16.0),
-                child: Text('Collection',style: GoogleFonts.roboto(fontWeight: FontWeight.bold,fontSize: 20),),
+                child: Text('Collection',style: GoogleFonts.roboto(fontWeight: FontWeight.bold,fontSize: 20.sp),),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(16.0),
@@ -275,7 +327,7 @@ class _CreateProductState extends State<CreateProduct> {
                   ),
                 ),
                 Padding(padding: const EdgeInsets.all(16.0),
-                  child: Text('Properties',style: GoogleFonts.roboto(fontWeight: FontWeight.bold,fontSize: 20),),
+                  child: Text('Properties',style: GoogleFonts.roboto(fontWeight: FontWeight.bold,fontSize: 20.sp),),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(16.0),
@@ -287,8 +339,8 @@ class _CreateProductState extends State<CreateProduct> {
                       5,
                     ],
                     child: SizedBox(
-                      height: 150,
-                      width: 350,
+                      height: 150.h,
+                      width: 350.w,
                       child: Container(
                         padding: const EdgeInsets.all(
                             16.0),
@@ -308,9 +360,9 @@ class _CreateProductState extends State<CreateProduct> {
                   padding: const EdgeInsets.all(16.0),
                   child: Row(
                     children: [
-                      Text('Fee',style: GoogleFonts.roboto(fontSize: 20,fontWeight: FontWeight.bold)),
-                      SizedBox(width: 120,),
-                      ElevatedButton(onPressed: (){}, child: Text('estimate',style: GoogleFonts.roboto(fontSize: 12,color: Colors.black),),
+                      Text('Fee',style: GoogleFonts.roboto(fontSize: 20.sp,fontWeight: FontWeight.bold)),
+                      SizedBox(width: 120.w,),
+                      ElevatedButton(onPressed: (){}, child: Text('estimate',style: GoogleFonts.roboto(fontSize: 12.sp,color: Colors.black),),
                         style: ElevatedButton.styleFrom(
                             backgroundColor: AppColors.grey,
                             shape: RoundedRectangleBorder(
@@ -319,10 +371,10 @@ class _CreateProductState extends State<CreateProduct> {
                         ),
 
                       ),
-                      SizedBox(width: 8,),
+                      SizedBox(width: 8.w,),
                       // Image.asset('asset/icon/ethereum.png'),
-                      SizedBox(width: 8,),
-                      Text('0.005 BNB',style: GoogleFonts.roboto(fontSize: 20,fontWeight: FontWeight.bold)),
+                      SizedBox(width: 8.w,),
+                      Text('0.005 BNB',style: GoogleFonts.roboto(fontSize: 20.sp,fontWeight: FontWeight.bold)),
 
                     ],
                   ),
@@ -349,22 +401,22 @@ class _CreateProductState extends State<CreateProduct> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('Fee:',style: GoogleFonts.roboto(fontSize: 16,)),
-                          SizedBox(height: 8,),
+                          Text('Fee:',style: GoogleFonts.roboto(fontSize: 16.sp,)),
+                          SizedBox(height: 8.h,),
                           Row(
                             children: [
                               // Image.asset('asset/icon/ethereum.png'),
-                              SizedBox(width: 8,),
-                              Text('0.005 BNB',style: GoogleFonts.roboto(fontSize: 18,fontWeight: FontWeight.bold)),
+                              SizedBox(width: 8.w,),
+                              Text('0.005 BNB',style: GoogleFonts.roboto(fontSize: 18.sp,fontWeight: FontWeight.bold)),
                             ],
                           )
                         ],
                       ),
-                      SizedBox(width: 70,),
+                      SizedBox(width: 70.w,),
                       SizedBox(
-                        height: 60,
-                        width: 179,
-                        child: ElevatedButton(onPressed: (){}, child: Text('Create',style: GoogleFonts.roboto(fontSize: 16,color: AppColors.grey),),
+                        height: 60.h,
+                        width: 179.w,
+                        child: ElevatedButton(onPressed: (){}, child: Text('Create',style: GoogleFonts.roboto(fontSize: 16.sp,color: AppColors.grey),),
                           style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.black,
                               shape: RoundedRectangleBorder(

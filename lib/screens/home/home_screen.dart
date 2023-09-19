@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nft/constants/app.colors.dart';
+import 'package:nft/screens/home/collections_screen.dart';
+import 'package:nft/screens/product_page/product_page_screen.dart';
 import 'package:nft/widget/tabbar_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -155,159 +158,170 @@ class _HomeScreenState extends State<HomeScreen>
                 ],
               ),
             ),
-            SizedBox(
-              height: 450.h,
-              width: 311.w,
-              child: ListView.separated(
-                  separatorBuilder: (context, index) => SizedBox(
-                        width: 12.w,
-                      ),
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 8,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: EdgeInsets.only(left: 18.w),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(18.r),
-                            color: Colors.white),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(
-                                  left: 16.w, top: 16.h, right: 16.w),
-                              child: Stack(
-                                children: [
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8.r),
+
+
+            GestureDetector(
+              onTap: ()=>Get.to(ProductPageScreen()),
+              child: SizedBox(
+                height: 450.h,
+                width: 311.w,
+                child: ListView.separated(
+                    separatorBuilder: (context, index) => SizedBox(
+                          width: 12.w,
+                        ),
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 8,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: EdgeInsets.only(left: 18.w),
+                        child: Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(18.r),
+                              color: Colors.white),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(
+                                    left: 16.w, top: 16.h, right: 16.w),
+                                child: Stack(
+                                  children: [
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(8.r),
+                                        color: Colors.black,
+                                      ),
+                                      clipBehavior: Clip.antiAlias,
+                                      child: Image.asset(
+                                        'assets/images/product1.png',
+                                        fit: BoxFit.cover,
+                                        width: 279.w,
+                                        height: 281.h,
+
+                                      ),
                                     ),
-                                    child: Image.asset(
-                                      'assets/images/product1.png',
+                                    Positioned(
+                                        left: 183.w,
+                                        top: 16.h,
+                                        right: 16.w,
+                                        child: Container(
+                                          height: 34.h,
+                                          width: 80.w,
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(8.r),
+                                              color: Colors.white),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              Icon(Icons.access_time_outlined),
+                                              Text('05:22')
+                                            ],
+                                          ),
+                                        ))
+                                  ],
+                                ),
+                              ),
+
+
+
+                              Padding(
+                                padding: EdgeInsets.only(left: 16.w, top: 16.h),
+                                child: Text(
+                                  'Deadzone 13 Hideout',
+                                  style: GoogleFonts.roboto(
+                                      color: AppColors.black2, fontSize: 18.sp),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(left: 16.w, top: 16.w),
+                                child: Row(
+                                  children: [
+                                    Image.asset(
+                                      'assets/images/img_profile.png',
                                       fit: BoxFit.contain,
-                                      width: 279.w,
-                                      height: 281.h,
+                                      height: 30.h,
+                                      width: 30.h,
                                     ),
-                                  ),
-                                  Positioned(
-                                      left: 183.w,
-                                      top: 16.w,
-                                      right: 16.w,
+                                    SizedBox(
+                                      width: 10.w,
+                                    ),
+                                    Text('@marterium',style: GoogleFonts.roboto(
+                                      color: Colors.black,
+                                    ),)
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(left: 16.w, top: 16.w),
+                                child: Row(
+                                  children: [
+                                    Image.asset(
+                                      'assets/images/coin.png',
+                                      fit: BoxFit.contain,
+                                      height: 30.h,
+                                      width: 30.h,
+                                    ),
+                                    SizedBox(
+                                      width: 4.w,
+                                    ),
+                                    Column(
+                                      children: [
+                                        Text('0.49 BNB',style: GoogleFonts.roboto(
+                                      color: Colors.black,
+                                    )),
+                                        SizedBox(
+                                          height: 4.h,
+                                        ),
+                                        Text('= \$140.5',style: GoogleFonts.roboto(
+                                          color: Colors.black,
+                                        )),
+                                      ],
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.only(
+                                        left: 126.w,
+                                        right: 16.w,
+                                      ),
                                       child: Container(
-                                        height: 34.h,
-                                        width: 80.w,
+                                        height: 36.h,
+                                        width: 64.w,
                                         decoration: BoxDecoration(
                                             borderRadius:
                                                 BorderRadius.circular(8.r),
-                                            color: Colors.white),
+                                            color: Colors.grey.shade200),
                                         child: Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceEvenly,
                                           children: [
-                                            Icon(Icons.access_time_outlined),
-                                            Text('05:22')
+                                            GestureDetector(
+                                              onTap: () {
+                                                setState(() {
+                                                  fav = !fav;
+                                                });
+                                              },
+                                              child: fav
+                                                  ? Icon(Icons
+                                                      .favorite_border_outlined)
+                                                  : Icon(Icons.favorite),
+                                            ),
+                                            Text('34',style: GoogleFonts.roboto(
+                                              color: Colors.black,
+                                            ))
                                           ],
                                         ),
-                                      ))
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 16.w, top: 16.h),
-                              child: Text(
-                                'Deadzone 13 Hideout',
-                                style: GoogleFonts.roboto(
-                                    color: AppColors.black2, fontSize: 18.sp),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 16.w, top: 16.w),
-                              child: Row(
-                                children: [
-                                  Image.asset(
-                                    'assets/images/img_profile.png',
-                                    fit: BoxFit.contain,
-                                    height: 30.h,
-                                    width: 30.h,
-                                  ),
-                                  SizedBox(
-                                    width: 10.w,
-                                  ),
-                                  Text('@marterium',style: GoogleFonts.roboto(
-                                    color: Colors.black,
-                                  ),)
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 16.w, top: 16.w),
-                              child: Row(
-                                children: [
-                                  Image.asset(
-                                    'assets/images/ethereum.png',
-                                    fit: BoxFit.contain,
-                                    height: 30.h,
-                                    width: 30.h,
-                                  ),
-                                  SizedBox(
-                                    width: 4.w,
-                                  ),
-                                  Column(
-                                    children: [
-                                      Text('0.49 BNB',style: GoogleFonts.roboto(
-                                    color: Colors.black,
-                                  )),
-                                      SizedBox(
-                                        height: 4.h,
                                       ),
-                                      Text('= \$140.5',style: GoogleFonts.roboto(
-                                        color: Colors.black,
-                                      )),
-                                    ],
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.only(
-                                      left: 126.w,
-                                      right: 16.w,
-                                    ),
-                                    child: Container(
-                                      height: 36.h,
-                                      width: 64.w,
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(8.r),
-                                          color: Colors.grey.shade200),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          GestureDetector(
-                                            onTap: () {
-                                              setState(() {
-                                                fav = !fav;
-                                              });
-                                            },
-                                            child: fav
-                                                ? Icon(Icons
-                                                    .favorite_border_outlined)
-                                                : Icon(Icons.favorite),
-                                          ),
-                                          Text('34',style: GoogleFonts.roboto(
-                                            color: Colors.black,
-                                          ))
-                                        ],
-                                      ),
-                                    ),
-                                  )
-                                ],
+                                    )
+                                  ],
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                    );
-                  }),
+                      );
+                    }),
+              ),
             ),
             SizedBox(
               height: 20.h,
@@ -417,10 +431,10 @@ class _HomeScreenState extends State<HomeScreen>
                                         padding: EdgeInsets.only(
                                             bottom: 40.h, top: 21.h),
                                         child: Image.asset(
-                                          'assets/images/ethereum.png',
+                                          'assets/images/coin.png',
                                           fit: BoxFit.contain,
                                           height: 16.h,
-                                          width: 9.h,
+                                          width: 16.h,
                                         ),
                                       ),
                                       SizedBox(
@@ -516,10 +530,10 @@ class _HomeScreenState extends State<HomeScreen>
                                         padding: EdgeInsets.only(
                                             bottom: 40.h, top: 21.h),
                                         child: Image.asset(
-                                          'assets/images/ethereum.png',
+                                          'assets/images/coin.png',
                                           fit: BoxFit.contain,
                                           height: 16.h,
-                                          width: 9.h,
+                                          width: 16.h,
                                         ),
                                       ),
                                       SizedBox(
@@ -615,10 +629,10 @@ class _HomeScreenState extends State<HomeScreen>
                                         padding: EdgeInsets.only(
                                             bottom: 40.h, top: 21.h),
                                         child: Image.asset(
-                                          'assets/images/ethereum.png',
+                                          'assets/images/coin.png',
                                           fit: BoxFit.contain,
                                           height: 16.h,
-                                          width: 9.h,
+                                          width: 16.h,
                                         ),
                                       ),
                                       SizedBox(
@@ -660,21 +674,24 @@ class _HomeScreenState extends State<HomeScreen>
             ),
 
 //Collections
-            Padding(
-              padding: EdgeInsets.only(
-                  left: 24.w, right: 24.w, top: 20.h, bottom: 20.h),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text('Collections',style: GoogleFonts.roboto(
-                    color: Colors.black,
-                  )),
-                  Row(
-                    children: [Text('See all',style: GoogleFonts.roboto(
+            GestureDetector(
+              onTap: ()=>Get.to(CollectionsScreen()),
+              child: Padding(
+                padding: EdgeInsets.only(
+                    left: 24.w, right: 24.w, top: 20.h, bottom: 20.h),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('Collections',style: GoogleFonts.roboto(
                       color: Colors.black,
-                    )), Icon(Icons.arrow_forward_ios)],
-                  )
-                ],
+                    )),
+                    Row(
+                      children: [Text('See all',style: GoogleFonts.roboto(
+                        color: Colors.black,
+                      )), Icon(Icons.arrow_forward_ios)],
+                    )
+                  ],
+                ),
               ),
             ),
 
@@ -683,126 +700,129 @@ class _HomeScreenState extends State<HomeScreen>
               child: ListView.separated(
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
-                    return Padding(
-                      padding: EdgeInsets.only(left: 24.w),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10.r),
-                            color: Colors.white),
-                        child: Stack(
-                          children: [
-                            Image.asset(
-                              'assets/images/background_profile.png',
-                              fit: BoxFit.contain,
-                              height: 151.h,
-                            ),
-                            Positioned(
-                                top: 121.h,
-                                left: 40.w,
-                                child: CircleAvatar(
-                                  child: Image.asset(
-                                    'assets/images/img_profile.png',
-                                    fit: BoxFit.contain,
-                                    width: 56.w,
-                                    height: 56.h,
-                                  ),
-                                )),
-                            Positioned(
-                                top: 177.h,
-                                left: 16.w,
-                                child: Row(
-                                  children: [
-                                    Text('Bored Ape Yacht Club /',style: GoogleFonts.roboto(
-                                      color: Colors.black,
-                                    )),
-                                    Text('2,7K owners',style: GoogleFonts.roboto(
-                                      color: Colors.black,
-                                    )),
-                                  ],
-                                )),
-                            Positioned(
-                                top: 177.h,
-                                left: 16.w,
-                                child: Row(
-                                  children: [
-                                    Text('Bored Ape Yacht Club /',style: GoogleFonts.roboto(
-                                      color: Colors.black,
-                                    )),
-                                    Text('2,7K owners',style: GoogleFonts.roboto(
-                                      color: Colors.grey,
-                                    )),
-                                  ],
-                                )),
-                            Positioned(
-                              top: 214.h,
-                              left: 16.w,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.only(left: 12.w),
-                                    child: Text('Total volume',style: GoogleFonts.roboto(
-                                      color: Colors.black,
-                                    )),
-                                  ),
-                                  SizedBox(
-                                    height: 4.h,
-                                  ),
-                                  Row(
+                    return GestureDetector(
+                      onTap: ()=>Get.to(CollectionsScreen()),
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 24.w),
+                        child: Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10.r),
+                              color: Colors.white),
+                          child: Stack(
+                            children: [
+                              Image.asset(
+                                'assets/images/background_profile.png',
+                                fit: BoxFit.contain,
+                                height: 151.h,
+                              ),
+                              Positioned(
+                                  top: 121.h,
+                                  left: 40.w,
+                                  child: CircleAvatar(
+                                    child: Image.asset(
+                                      'assets/images/img_profile.png',
+                                      fit: BoxFit.contain,
+                                      width: 56.w,
+                                      height: 56.h,
+                                    ),
+                                  )),
+                              Positioned(
+                                  top: 177.h,
+                                  left: 16.w,
+                                  child: Row(
                                     children: [
-                                      Image.asset(
-                                        'assets/images/ethereum.png',
-                                        fit: BoxFit.contain,
-                                        height: 16.h,
-                                        width: 9.h,
-                                      ),
-                                      SizedBox(
-                                        width: 4.w,
-                                      ),
-                                      Text('475.98 BNB',style: GoogleFonts.roboto(
+                                      Text('Bored Ape Yacht Club /',style: GoogleFonts.roboto(
+                                        color: Colors.black,
+                                      )),
+                                      Text('2,7K owners',style: GoogleFonts.roboto(
                                         color: Colors.black,
                                       )),
                                     ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Positioned(
-                              top: 214.h,
-                              left: 186.w,
-                              right: 14.w,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.only(left: 12.w),
-                                    child: Text('Floor',style: GoogleFonts.roboto(
-                                      color: Colors.black,
-                                    )),
-                                  ),
-                                  SizedBox(
-                                    height: 4.h,
-                                  ),
-                                  Row(
+                                  )),
+                              Positioned(
+                                  top: 177.h,
+                                  left: 16.w,
+                                  child: Row(
                                     children: [
-                                      Image.asset(
-                                        'assets/images/ethereum.png',
-                                        fit: BoxFit.contain,
-                                        height: 16.h,
-                                        width: 9.h,
-                                      ),
-                                      SizedBox(
-                                        width: 4.w,
-                                      ),
-                                      Text('72 BNB',style: GoogleFonts.roboto(
+                                      Text('Bored Ape Yacht Club /',style: GoogleFonts.roboto(
                                         color: Colors.black,
                                       )),
+                                      Text('2,7K owners',style: GoogleFonts.roboto(
+                                        color: Colors.grey,
+                                      )),
                                     ],
-                                  ),
-                                ],
+                                  )),
+                              Positioned(
+                                top: 214.h,
+                                left: 16.w,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 12.w),
+                                      child: Text('Total volume',style: GoogleFonts.roboto(
+                                        color: Colors.black,
+                                      )),
+                                    ),
+                                    SizedBox(
+                                      height: 4.h,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Image.asset(
+                                          'assets/images/coin.png',
+                                          fit: BoxFit.contain,
+                                          height: 16.h,
+                                          width: 16.h,
+                                        ),
+                                        SizedBox(
+                                          width: 4.w,
+                                        ),
+                                        Text('475.98 BNB',style: GoogleFonts.roboto(
+                                          color: Colors.black,
+                                        )),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
-                          ],
+                              Positioned(
+                                top: 214.h,
+                                left: 180.w,
+                                right: 14.w,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 12.w),
+                                      child: Text('Floor',style: GoogleFonts.roboto(
+                                        color: Colors.black,
+                                      )),
+                                    ),
+                                    SizedBox(
+                                      height: 4.h,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Image.asset(
+                                          'assets/images/coin.png',
+                                          fit: BoxFit.contain,
+                                          height: 16.h,
+                                          width: 16.h,
+                                        ),
+                                        SizedBox(
+                                          width: 4.w,
+                                        ),
+                                        Text('72 BNB',style: GoogleFonts.roboto(
+                                          color: Colors.black,
+                                        )),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     );

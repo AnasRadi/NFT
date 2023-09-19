@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nft/screens/account/settings_screen.dart';
 import 'package:nft/widget/button_profile_widget.dart';
 import 'package:nft/widget/card_profile_widget.dart';
 
@@ -36,7 +38,7 @@ class _ProfileScreenState extends State<ProfileScreen>with SingleTickerProviderS
         backgroundColor: Colors.transparent,
         elevation: 0,
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.settings_outlined))
+          IconButton(onPressed: () =>Get.to(SettingsScreen()), icon: Icon(Icons.settings_outlined))
         ],
       ),
       body: ListView(

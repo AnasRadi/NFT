@@ -9,6 +9,7 @@ import 'package:nft/screens/auth/sign_up.dart';
 import 'package:nft/screens/bn_screen.dart';
 import 'package:nft/screens/home/home_screen.dart';
 import 'package:nft/widget/button_widget.dart';
+import 'package:nft/widget/edit_text_widget.dart';
 import 'package:nft/widget/icon_button_widget.dart';
 
 class SignIn extends StatefulWidget {
@@ -74,56 +75,9 @@ class _SignInState extends State<SignIn> {
                     fontWeight: FontWeight.bold),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: TextField(
-                keyboardType: TextInputType.phone,
-                decoration: InputDecoration(
-                    errorText: _phoneError,
-                    label: SizedBox(
-                      width: 130.w,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text('Phone number '),
-                          Text(
-                            " *",
-                            style: TextStyle(color: AppColors.red),
-                          ),
-                        ],
-                      ),
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.r),
-                      borderSide: BorderSide(
-                        width: 1.w,
-                        color: AppColors.black,
-                      ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.r),
-                      borderSide: BorderSide(
-                        width: 1.w,
-                        color: AppColors.black,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.r),
-                      borderSide: BorderSide(
-                        width: 1.w,
-                        color: AppColors.black,
-                      ),
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.r),
-                      borderSide: BorderSide(
-                        width: 1.w,
-                        color: AppColors.red,
-                      ),
-                    )),
-              ),
-            ),
+            EditTextWidget(star: '*',controller: _phoneTextController,name: 'Phone number',size: 20,),
+
+
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: TextField(
@@ -187,6 +141,8 @@ class _SignInState extends State<SignIn> {
                     )),
               ),
             ),
+
+
             Padding(
               padding: EdgeInsets.only(top: 5.h, left: 20.w),
               child: RichText(
@@ -211,7 +167,7 @@ class _SignInState extends State<SignIn> {
             SizedBox(
               height: 25.h,
             ),
-            ButtonWidget(name: 'Log in',onPressed: ()=>Get.to(BnScreen()),),
+            ButtonWidget(name: 'Log in',onPressed: ()=>Get.offAll(BnScreen()),),
             SizedBox(
               height: 25.h,
             ),
@@ -222,6 +178,7 @@ class _SignInState extends State<SignIn> {
                   width: 5.w,
                 ),
                 IconButtonWidget(
+                  onPressed: (){},
                   name: 'Google',
                   img: 'assets/icon/google.png',
                 ),
@@ -229,6 +186,7 @@ class _SignInState extends State<SignIn> {
                   width: 5.w,
                 ),
                 IconButtonWidget(
+                  onPressed: (){},
                   name: 'Apple',
                   img: 'assets/icon/appstore.png',
                 ),

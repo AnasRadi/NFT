@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nft/models/bn_item.dart';
-import 'package:nft/screens/cart_screen.dart';
+import 'package:nft/screens/cart/cart_screen.dart';
 import 'package:nft/screens/create_product.dart';
 import 'package:nft/screens/home/home_screen.dart';
-import 'package:nft/screens/profile_Screen.dart';
-import 'package:nft/screens/searchScreen.dart';
+import 'package:nft/screens/account/profile_Screen.dart';
+import 'package:nft/screens/search/search_screen.dart';
 
 class BnScreen extends StatefulWidget {
   const BnScreen({Key? key}) : super(key: key);

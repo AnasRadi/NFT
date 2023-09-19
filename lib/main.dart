@@ -5,9 +5,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:nft/constants/app.theme.dart';
-import 'package:nft/screens/auth/sign_in.dart';
-import 'package:nft/screens/auth/sign_up.dart';
 import 'package:nft/screens/bn_screen.dart';
+
+import 'package:nft/screens/cart/checkout_screen.dart';
+import 'package:nft/screens/search/search_screen.dart';
 
 
 bool darkMode = false;
@@ -40,8 +41,9 @@ class MyApp extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               title: 'Flutter Demo',
               // darkTheme: ThemeData.dark(),
-              // home: SplashScreen()
-              home: SignIn()
+              // home: CheckoutScreen()
+              home: BnScreen()
+              // home: BumbleBeeRemoteVideo()
 
 
           );
