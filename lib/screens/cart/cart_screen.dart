@@ -84,7 +84,7 @@ class _CartScreenState extends State<CartScreen> {
             height: 10.h,
           ),
           Padding(
-            padding:  EdgeInsets.only(left: 24.w),
+            padding: EdgeInsets.only(left: 24.w),
             child: Row(
               children: [
                 Text(
@@ -105,142 +105,160 @@ class _CartScreenState extends State<CartScreen> {
             height: 14.h,
           ),
           ListView.separated(
-            shrinkWrap: true,
+              shrinkWrap: true,
               itemBuilder: (context, index) => Padding(
-            padding:  EdgeInsets.only(left: 24.w,right: 24.w),
-            child: Container(
-              width: 366.w,
-              height: 100.h,
-
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.r),
-                  color: Colors.white,
-                  border: Border.all(color: Colors.white)
-              ),
-              child: Padding(
-                padding:  EdgeInsets.only(top: 16.h),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Image.asset(
-                      'assets/images/product1.png',
-                      width: 50.w,
-                      height: 50.h,
-                    ),
-                    Column(
-                      children: [
-                        Text(
-                          'Deadzone 13 Hideout',
-                          style: GoogleFonts.roboto(
-                              fontSize: 16.sp, fontWeight: FontWeight.w400),
-                        ),
-                        SizedBox(height: 10.h,),
-                        SizedBox(
-                          width: 113.w,
-                          height: 40.h,
-                          child: Row(
-                            children: [
-                              GestureDetector(
-                                onTap: (){
-                                  setState(() {
-                                    --_counter_addAndremove;
-
-                                  });
-                                },
-                                child: Container(
-                                  width: 40.w,
-                                  height: 40.h,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8.r),
-                                      color: Colors.white,
-                                      border: Border.all(width: 2.w,color: Colors.grey.shade400)),
-                                  child: Icon(Icons.remove,color: AppColors.black,),
-                                ),
-                              ),
-                              Container(
-                                  height: 40.h,
-                                  width: 20.w,
-                                  child: Center(child: Text(_counter_addAndremove.toString(),style: GoogleFonts.roboto(
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 14.sp
-                                  ),))),
-                              GestureDetector(
-                                onTap: (){
-                                  setState(() {
-                                    ++_counter_addAndremove;
-
-                                  });
-                                },
-                                child: Container(
-                                  width: 40.w,
-                                  height: 40.h,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8.r),
-                                      color: Colors.white,
-                                      border: Border.all(width: 2.w,color: Colors.grey.shade400)),
-                                  child: Icon(Icons.add,color: AppColors.black,),
-                                ),
-                              )
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-
-
-
-
-                    Column(
-
-                      children: [
-                        Padding(
-                          padding:  EdgeInsets.only(left:50.w,),
-                          child: Icon(Icons.close,weight: 18.w,),
-                        ),
-                        SizedBox(
-                          height: 10.h,
-                        ),
-                        Row(
+                    padding: EdgeInsets.only(left: 24.w, right: 24.w),
+                    child: Container(
+                      width: 366.w,
+                      height: 100.h,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10.r),
+                          color: Colors.white,
+                          border: Border.all(color: Colors.white)),
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 16.h),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Image.asset(
-                              'assets/images/coin.png',
-                              fit: BoxFit.contain,
-                              height: 18.h,
-                              width: 18.h,
+                              'assets/images/product1.png',
+                              width: 50.w,
+                              height: 50.h,
                             ),
-                            SizedBox(
-                              width: 4.w,
+                            Column(
+                              children: [
+                                Text(
+                                  'Deadzone 13 Hideout',
+                                  style: GoogleFonts.roboto(
+                                      fontSize: 16.sp,
+                                      fontWeight: FontWeight.w400),
+                                ),
+                                SizedBox(
+                                  height: 10.h,
+                                ),
+                                SizedBox(
+                                  width: 113.w,
+                                  height: 40.h,
+                                  child: Row(
+                                    children: [
+                                      GestureDetector(
+                                        onTap: () {
+                                          setState(() {
+                                            --_counter_addAndremove;
+                                          });
+                                        },
+                                        child: Container(
+                                          width: 40.w,
+                                          height: 40.h,
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(8.r),
+                                              color: Colors.white,
+                                              border: Border.all(
+                                                  width: 2.w,
+                                                  color: Colors.grey.shade400)),
+                                          child: Icon(
+                                            Icons.remove,
+                                            color: AppColors.black,
+                                          ),
+                                        ),
+                                      ),
+                                      Container(
+                                          height: 40.h,
+                                          width: 20.w,
+                                          child: Center(
+                                              child: Text(
+                                            _counter_addAndremove.toString(),
+                                            style: GoogleFonts.roboto(
+                                                fontWeight: FontWeight.w400,
+                                                fontSize: 14.sp),
+                                          ))),
+                                      GestureDetector(
+                                        onTap: () {
+                                          setState(() {
+                                            ++_counter_addAndremove;
+                                          });
+                                        },
+                                        child: Container(
+                                          width: 40.w,
+                                          height: 40.h,
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(8.r),
+                                              color: Colors.white,
+                                              border: Border.all(
+                                                  width: 2.w,
+                                                  color: Colors.grey.shade400)),
+                                          child: Icon(
+                                            Icons.add,
+                                            color: AppColors.black,
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                )
+                              ],
                             ),
-                            Text('0.49 BNB',style: GoogleFonts.roboto(
-                                color: Colors.black,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 16.sp
-                            )),
+                            Column(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                    left: 50.w,
+                                  ),
+                                  child: Icon(
+                                    Icons.close,
+                                    weight: 18.w,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 10.h,
+                                ),
+                                Row(
+                                  children: [
+                                    Image.asset(
+                                      'assets/images/coin.png',
+                                      fit: BoxFit.contain,
+                                      height: 18.h,
+                                      width: 18.h,
+                                    ),
+                                    SizedBox(
+                                      width: 4.w,
+                                    ),
+                                    Text('0.49 BNB',
+                                        style: GoogleFonts.roboto(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 16.sp)),
+                                  ],
+                                )
+                              ],
+                            )
                           ],
-                        )
-                      ],
-                    )
-                  ],
-                ),
-              ),
-            ),
-          ),
-              separatorBuilder: (context, index) => SizedBox(height: 10.h,),
+                        ),
+                      ),
+                    ),
+                  ),
+              separatorBuilder: (context, index) => SizedBox(
+                    height: 10.h,
+                  ),
               itemCount: 3),
-          SizedBox(height: 15.h,),
+          SizedBox(
+            height: 15.h,
+          ),
           Padding(
-            padding:  EdgeInsets.symmetric(horizontal: 24.w),
+            padding: EdgeInsets.symmetric(horizontal: 24.w),
             child: Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Original price',style: GoogleFonts.roboto(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 16.sp
-                    )),
+                    Text('Original price',
+                        style: GoogleFonts.roboto(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 16.sp)),
                     Row(
                       children: [
                         Image.asset(
@@ -252,27 +270,28 @@ class _CartScreenState extends State<CartScreen> {
                         SizedBox(
                           width: 4.w,
                         ),
-                        Text('0.49 BNB',style: GoogleFonts.roboto(
-                            color: Colors.black,
-                            fontWeight: FontWeight.w400,
-                            fontSize: 16.sp
-                        )),
+                        Text('0.49 BNB',
+                            style: GoogleFonts.roboto(
+                                color: Colors.black,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 16.sp)),
                       ],
                     )
-
                   ],
                 ),
-                SizedBox(height: 16.h,),
+                SizedBox(
+                  height: 16.h,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Row(
                       children: [
-                        Text('VAT',style: GoogleFonts.roboto(
-                            color: Colors.black,
-                            fontWeight: FontWeight.w400,
-                            fontSize: 16.sp
-                        )),
+                        Text('VAT',
+                            style: GoogleFonts.roboto(
+                                color: Colors.black,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 16.sp)),
                         Text('(Czech Republic)'),
                       ],
                     ),
@@ -287,25 +306,26 @@ class _CartScreenState extends State<CartScreen> {
                         SizedBox(
                           width: 4.w,
                         ),
-                        Text('0.49 BNB',style: GoogleFonts.roboto(
-                            color: Colors.black,
-                            fontWeight: FontWeight.w400,
-                            fontSize: 16.sp
-                        )),
+                        Text('0.49 BNB',
+                            style: GoogleFonts.roboto(
+                                color: Colors.black,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 16.sp)),
                       ],
                     )
-
                   ],
                 ),
-                SizedBox(height: 16.h,),
+                SizedBox(
+                  height: 16.h,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Discounted price',style: GoogleFonts.roboto(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 16.sp
-                    )),
+                    Text('Discounted price',
+                        style: GoogleFonts.roboto(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 16.sp)),
                     Row(
                       children: [
                         Image.asset(
@@ -317,56 +337,51 @@ class _CartScreenState extends State<CartScreen> {
                         SizedBox(
                           width: 4.w,
                         ),
-                        Text('0.49 BNB',style: GoogleFonts.roboto(
-                            color: Colors.black,
-                            fontWeight: FontWeight.w400,
-                            fontSize: 16.sp
-                        )),
+                        Text('0.49 BNB',
+                            style: GoogleFonts.roboto(
+                                color: Colors.black,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 16.sp)),
                       ],
                     )
-
                   ],
                 ),
               ],
             ),
           ),
-          SizedBox(height: 30.h,),
+          SizedBox(
+            height: 30.h,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              ButtonProfileWidget(name: 'Checkout',
-                  onTap: ()=>Get.to(CheckoutScreen()),
+              ButtonProfileWidget(
+                  name: 'Checkout',
+                  onTap: () => Get.to(CheckoutScreen()),
                   nameColorBorder: AppColors.black2,
-                  BackgroundColor: Colors.white
-              ),
+                  BackgroundColor: Colors.white),
               GestureDetector(
-                onTap:(){},
-
+                onTap: () {},
                 child: Container(
                   height: 60.h,
                   width: 180.w,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(16.r),
                       color: AppColors.black2,
-                      border: Border.all(width: 2.w,color: Colors.white)),
+                      border: Border.all(width: 2.w, color: Colors.white)),
                   alignment: Alignment.center,
                   child: Text(
                     'Continue searching',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.roboto(
-                        fontWeight:FontWeight.w700,
+                        fontWeight: FontWeight.w700,
                         fontSize: 18.sp,
-                        color: Colors.white
-
-                    ),
+                        color: Colors.white),
                   ),
                 ),
               )
             ],
           ),
-
-
-
         ],
       ),
     );

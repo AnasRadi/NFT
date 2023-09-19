@@ -3,9 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nft/constants/app.colors.dart';
+import 'package:nft/screens/home/Favorites_Screen.dart';
 import 'package:nft/screens/home/collections_screen.dart';
 import 'package:nft/screens/product_page/product_page_screen.dart';
-import 'package:nft/widget/tabbar_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -150,10 +150,13 @@ class _HomeScreenState extends State<HomeScreen>
                   Text('Favorites',style: GoogleFonts.roboto(
                     color: Colors.black,
                   ),),
-                  Row(
-                    children: [Text('See all',style: GoogleFonts.roboto(
-                      color: Colors.black,
-                    ),), Icon(Icons.arrow_forward_ios)],
+                  GestureDetector(
+                    onTap: ()=>Get.to(FavoritesScreen()),
+                    child: Row(
+                      children: [Text('See all',style: GoogleFonts.roboto(
+                        color: Colors.black,
+                      ),), Icon(Icons.arrow_forward_ios)],
+                    ),
                   )
                 ],
               ),

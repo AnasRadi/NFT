@@ -6,8 +6,11 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:nft/constants/app.theme.dart';
 import 'package:nft/screens/bn_screen.dart';
+import 'package:nft/screens/cart/checkout2_screen.dart';
+import 'package:nft/screens/cart/checkout3_Screen.dart';
 
 import 'package:nft/screens/cart/checkout_screen.dart';
+import 'package:nft/screens/home/Favorites_Screen.dart';
 import 'package:nft/screens/search/search_screen.dart';
 
 
