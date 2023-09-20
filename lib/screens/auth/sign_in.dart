@@ -92,7 +92,7 @@ class _SignInState extends State<SignIn> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('Password '),
+                          Text('Password'.tr),
                           Text(
                             " *",
                             style: TextStyle(color: Colors.red),

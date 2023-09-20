@@ -14,7 +14,7 @@ class ContainerSearchTrendingListViewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16),
+      padding:  EdgeInsets.all(18),
       child: Stack(
         children: [
           Container(
@@ -36,7 +36,7 @@ class ContainerSearchTrendingListViewWidget extends StatelessWidget {
                       ),
                       child: Padding(
                         padding:
-                            const EdgeInsets.only(top: 16, right: 16, left: 16),
+                             EdgeInsets.only(top: 16.h, right: 16.w, left: 16.h),
                         child: Ink.image(
                           image: AssetImage('assets/images/product1.png'),
                           fit: BoxFit.cover,
@@ -62,7 +62,7 @@ class ContainerSearchTrendingListViewWidget extends StatelessWidget {
                                 width: 30.w,
                                 height: 30.h,
                                 child: CircleAvatar(
-                                  radius: 20,
+                                  radius: 20.r,
                                   child: Image.asset('assets/images/img_profile.png'),
                                 ),),
                               SizedBox(
@@ -77,7 +77,7 @@ class ContainerSearchTrendingListViewWidget extends StatelessWidget {
                             ],
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(top: 16.0),
+                            padding:  EdgeInsets.only(top: 16.0.h),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -132,8 +132,8 @@ class ContainerSearchTrendingListViewWidget extends StatelessWidget {
                 )),
           ),
           Positioned(
-            top: 32,
-            right: 32,
+            top: 32.h,
+            right: 32.w,
             child: ElevatedButton.icon(
               style: OutlinedButton.styleFrom(
                 backgroundColor: AppColors.grey,

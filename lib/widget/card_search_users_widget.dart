@@ -4,14 +4,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:nft/constants/app.colors.dart';
 
 class ContainerSearchUsersWidget extends StatelessWidget {
-  String img;
-  String name;
+
   String num;
 
   ContainerSearchUsersWidget({
     super.key,
-    required this.img,
-    required this.name,
+
     required this.num,
   });
 
@@ -40,7 +38,7 @@ class ContainerSearchUsersWidget extends StatelessWidget {
                         child: Text(num),
                       ),
                       Image.asset(
-                        img,
+                        'assets/images/img_profile.png',
                         height: 44.h,
                         width: 44.w,
                       ),

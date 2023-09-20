@@ -36,7 +36,7 @@ class ContainerSearchTrendingGridViewWidget extends StatelessWidget {
                       ),
                       child: Padding(
                         padding:
-                        const EdgeInsets.only(top: 10, right: 4, left: 4),
+                         EdgeInsets.only(top: 10.h, right: 4.w, left: 4.w),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(10.r),
                           child: Image.asset('assets/images/product1.png',
@@ -54,14 +54,14 @@ class ContainerSearchTrendingGridViewWidget extends StatelessWidget {
                                   fontSize: 14.sp,
                                   fontWeight: FontWeight.w400)),
                           Padding(
-                            padding: const EdgeInsets.only(top: 10.0),
+                            padding:  EdgeInsets.only(top: 10.0.h),
                             child: Row(
                               children: [
                                 Container(
                                   width: 20.w,
                                   height: 20.h,
                                   child: CircleAvatar(
-                                    radius: 20,
+                                    radius: 20.r,
                                     child: Image.asset('assets/images/img_profile.png'),
                                   ),),
                                 SizedBox(
@@ -134,8 +134,8 @@ class ContainerSearchTrendingGridViewWidget extends StatelessWidget {
                 )),
           ),
           Positioned(
-            top: 18,
-            right: 20,
+            top: 18.h,
+            right: 20.w,
 
             child: Container(
               width: 67.w,

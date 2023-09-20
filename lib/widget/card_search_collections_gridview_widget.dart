@@ -14,11 +14,11 @@ class ContainerSearchCollectionsGridViewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 8),
+      padding:  EdgeInsets.symmetric(horizontal: 8.0.w,vertical: 8.h),
       child: Card(
         elevation: 10,
         child: Container(
-          height: 98.0,
+          height: 98.0.h,
           child: Row(
             children: <Widget>[
               Container(
@@ -33,70 +33,73 @@ class ContainerSearchCollectionsGridViewWidget extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 15.5),
-                child: Container(
-                  height: 98.h,
-                  child: Padding(
-                    padding: EdgeInsets.fromLTRB(10, 2, 0, 0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Row(
+                padding:  EdgeInsets.only(top: 15.5.h,),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Padding(
+                      padding:  EdgeInsets.only(left: 16.w),
+                      child: Row(
+                        children: [
+                          Image.asset(
+                            'assets/images/img_profile.png',
+                            height: 20.h,
+                            width: 20.w,
+                          ),
+                          SizedBox(width: 8.w,),
+                          Text('Bored Ape Yacht Club /',style: GoogleFonts.roboto(fontSize: 14.sp,fontWeight: FontWeight.w400)),
+                          SizedBox(width: 4.w,),
+                          Text('34,7K owners',style: GoogleFonts.roboto(fontSize: 12.sp,fontWeight: FontWeight.w400,color: AppColors.grey2),),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 10.h,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        SizedBox(width: 25.w,),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                     children: [
+                       Text('Total voume',style: GoogleFonts.roboto(fontSize: 12.sp,fontWeight: FontWeight.w400,color: AppColors.grey2),),
+                       SizedBox(width: 8.w,),
+
+                       Row(
+                       children: [
+                         Image.asset('assets/images/coin.png',
+                           height: 18.h,
+                           width: 18.w,),
+                         SizedBox(width: 4.w,),
+                         Text('795,6K BNB',style: GoogleFonts.roboto(fontSize: 16.sp,fontWeight: FontWeight.w400)),
+
+                       ],
+                     )
+                     ],
+                   ),
+                        SizedBox(width: 25.w,),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            Image.asset(
-                              'assets/images/img_profile.png',
-                              height: 20.h,
-                              width: 20.w,
-                            ),
+                            Text('Floor',style: GoogleFonts.roboto(fontSize: 12.sp,fontWeight: FontWeight.w400,color: AppColors.grey2),),
                             SizedBox(width: 8.w,),
-                            Text('Bored Ape Yacht Club /',style: GoogleFonts.roboto(fontSize: 14.sp,fontWeight: FontWeight.w400)),
-                            SizedBox(width: 4.w,),
-                            Text('34,7K owners',style: GoogleFonts.roboto(fontSize: 12.sp,fontWeight: FontWeight.w400,color: AppColors.grey2),),
-                          ],
-                        ),
-                        SizedBox(height: 10.h,),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Image.asset('assets/images/coin.png',
-                              height: 18.h,
-                              width: 18.w,),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+
+                            Row(
                               children: [
-                                Text('Total voume',style: GoogleFonts.roboto(fontSize: 12.sp,fontWeight: FontWeight.w400,color: AppColors.grey2),),
-                                Text('795,6K BNB',style: GoogleFonts.roboto(fontSize: 16.sp,fontWeight: FontWeight.w400)),
-                              ],
-                            ),
-                            SizedBox(width: 29.w,),
-                            Container(
-                                height:36.h,
-                                child:Row(
-                                    children: [
-                                      VerticalDivider(
-                                        color: AppColors.black2.withOpacity(0.15),
-                                        thickness: 1, //thickness of divier line
-                                      ),
-                                    ]
-                                )
-                            ),
-                            SizedBox(width: 29.w,),
-                            Image.asset('assets/images/coin.png',
-                              height: 18.h,
-                              width: 18.w,),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text('Floor',style: GoogleFonts.roboto(fontSize: 12.sp,fontWeight: FontWeight.w400,color: AppColors.grey2),),
+                                Image.asset('assets/images/coin.png',
+                                  height: 18.h,
+                                  width: 18.w,),
+                                SizedBox(width: 4.w,),
                                 Text('72 BNB',style: GoogleFonts.roboto(fontSize: 16.sp,fontWeight: FontWeight.w400)),
                               ],
                             ),
-
                           ],
-                        ),
+                        )
+
+
+
                       ],
                     ),
-                  ),
+                  ],
                 ),
               )
             ],

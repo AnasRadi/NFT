@@ -40,7 +40,7 @@ class ContainerSearchCollectionsListViewWidget extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 25),
+                      padding:  EdgeInsets.only(top: 25.h),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
@@ -102,7 +102,7 @@ class ContainerSearchCollectionsListViewWidget extends StatelessWidget {
                               ),
 
                               Container(
-                                  height: 36,
+                                  height: 36.h,
                                   child: Row(children: [
                                     VerticalDivider(
                                       color: AppColors.black2.withOpacity(0.15),
@@ -146,12 +146,12 @@ class ContainerSearchCollectionsListViewWidget extends StatelessWidget {
                   ],
                 ),
                 Positioned(
-                  top: 165,
-                  left: 16,
-                  width: 56,
-                  height: 56,
+                  top: 165.h,
+                  left: 16.w,
+                  width: 56.w,
+                  height: 56.h,
                   child: CircleAvatar(
-                    radius: 20,
+                    radius: 20.r,
                     child: Image.asset('assets/images/img_profile.png'),
                   ),
                 ),

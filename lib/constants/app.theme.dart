@@ -1,39 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'app.colors.dart';
 
-class ThemesService{
-  final lightTheme = ThemeData.light().copyWith(
-    primaryColor: AppColors.white,
-    appBarTheme: const AppBarTheme(),
-    dividerColor: AppColors.black,
-  );
+class ThemesService {
+  final darkTheme = ThemeData(
+      brightness: Brightness.dark,
+      primaryColor: AppColors.black2,
+      appBarTheme: AppBarTheme(
+        color: AppColors.black2,
+        titleTextStyle: GoogleFonts.roboto(
+          color: AppColors.white,
+        ),
+      ),      buttonTheme: ButtonThemeData(
+    buttonColor: Colors.white,
+    disabledColor: AppColors.black2,
+  ));
 
-  final darkTheme = ThemeData.light().copyWith(
-    primaryColor: AppColors.black,
-    appBarTheme: const AppBarTheme(),
-    dividerColor: AppColors.white,
-  );
-
-  final _getStorage = GetStorage();
-  final _darkThemeKey = 'isDarkTheme';
-
-  void saveThemeData(bool isDarkMode){
-    _getStorage.write(_darkThemeKey, isDarkMode);
-  }
-
-  bool isSavedDarkMode(){
-    return _getStorage.read(_darkThemeKey) ?? false;
-  }
-
-  ThemeMode getThemeMode(){
-    return isSavedDarkMode() ? ThemeMode.dark : ThemeMode.light;
-  }
-
-  void changeTheme(){
-    Get.changeThemeMode(isSavedDarkMode() ? ThemeMode.light :ThemeMode.dark);
-    saveThemeData(!isSavedDarkMode());
-    }
-
+  final lightTheme = ThemeData(
+      brightness: Brightness.light,
+      primaryColor: Colors.white,
+      appBarTheme: AppBarTheme(
+        color: Colors.transparent,
+        titleTextStyle: GoogleFonts.roboto(
+          color: AppColors.black2,
+        ),
+      ),
+      buttonTheme: ButtonThemeData(
+          buttonColor: AppColors.black2,
+          disabledColor: Colors.white,
+          ));
 }

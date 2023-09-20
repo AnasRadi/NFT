@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:nft/constants/app.colors.dart';
 import 'package:nft/screens/home/Favorites_Screen.dart';
 import 'package:nft/screens/home/collections_screen.dart';
+import 'package:nft/screens/home/topsellers_screen.dart';
 import 'package:nft/screens/product_page/product_page_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -339,10 +340,13 @@ class _HomeScreenState extends State<HomeScreen>
                   Text('Top Sellers',style: GoogleFonts.roboto(
                     color: Colors.black,
                   )),
-                  Row(
-                    children: [Text('See all',style: GoogleFonts.roboto(
-                      color: Colors.black,
-                    )), Icon(Icons.arrow_forward_ios)],
+                  GestureDetector(
+                    onTap: () => Get.to(TopSellersScreen()),
+                    child: Row(
+                      children: [Text('See all',style: GoogleFonts.roboto(
+                        color: Colors.black,
+                      )), Icon(Icons.arrow_forward_ios)],
+                    ),
                   )
                 ],
               ),
@@ -373,304 +377,313 @@ class _HomeScreenState extends State<HomeScreen>
                 child: TabBarView(
                   controller: _tabController,
                   children: [
-                    ListView.separated(
-                        separatorBuilder: (context, index) => SizedBox(
-                              height: 8.h,
-                            ),
-                        physics: NeverScrollableScrollPhysics(),
-                        itemCount: 3,
-                        itemBuilder: (context, index) {
-                          return Container(
-                            height: 78.h,
-                            width: 367.w,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50.r),
-                                color: Colors.white
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                    left: 16.w,
+                    Padding(
+                      padding: EdgeInsets.only(left: 15.w,right: 15.w),
+                      child: ListView.separated(
+                          separatorBuilder: (context, index) => SizedBox(
+                                height: 8.h,
+                              ),
+                          physics: NeverScrollableScrollPhysics(),
+                          itemCount: 3,
+                          itemBuilder: (context, index) {
+                            return Container(
+                              height: 78.h,
+                              width: 367.w,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10.r),
+                                  color: Colors.white
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                      left: 16.w,
+                                    ),
+                                    child: Text((index + 1).toString()),
                                   ),
-                                  child: Text((index + 1).toString()),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(left: 8.h),
-                                  child: Image.asset(
-                                    'assets/images/img_profile.png',
-                                    fit: BoxFit.contain,
-                                    height: 44.h,
-                                    width: 44.h,
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 8.h),
+                                    child: Image.asset(
+                                      'assets/images/img_profile.png',
+                                      fit: BoxFit.contain,
+                                      height: 44.h,
+                                      width: 44.h,
+                                    ),
                                   ),
-                                ),
-                                Padding(
-                                  padding:
-                                      EdgeInsets.only(left: 10.w, top: 17.h),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text('@marterium',style: GoogleFonts.roboto(
-                                        color: Colors.black,
-                                      )),
-                                      SizedBox(
-                                        height: 4.h,
-                                      ),
-                                      Text('Floor:1.66ETH',style: GoogleFonts.roboto(
-                                        color: Colors.black,
-                                      ))
-                                    ],
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                    left: 14.w,
-                                  ),
-                                  child: Row(
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                            bottom: 40.h, top: 21.h),
-                                        child: Image.asset(
-                                          'assets/images/coin.png',
-                                          fit: BoxFit.contain,
-                                          height: 16.h,
-                                          width: 16.h,
+                                  Padding(
+                                    padding:
+                                        EdgeInsets.only(left: 10.w, top: 17.h),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text('@marterium',style: GoogleFonts.roboto(
+                                          color: Colors.black,
+                                        )),
+                                        SizedBox(
+                                          height: 4.h,
                                         ),
-                                      ),
-                                      SizedBox(
-                                        width: 4.w,
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.only(top: 20.h),
-                                        child: Column(
-                                          children: [
-                                            Text('475.98 BNB',style: GoogleFonts.roboto(
-                                              color: Colors.black,
-                                            )),
-                                            SizedBox(
-                                              height: 4.h,
-                                            ),
-                                            Row(
-                                              children: [
-                                                Text('= \$4.8',style: GoogleFonts.roboto(
-                                                  color: Colors.black,
-                                                )),
-                                                Text('= +24.6%',style: GoogleFonts.roboto(
-                                                  color: Colors.black,
-                                                )),
-                                              ],
-                                            ),
-                                          ],
+                                        Text('Floor:1.66ETH',style: GoogleFonts.roboto(
+                                          color: Colors.black,
+                                        ))
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                      left: 14.w,
+                                    ),
+                                    child: Row(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              bottom: 40.h, top: 21.h),
+                                          child: Image.asset(
+                                            'assets/images/coin.png',
+                                            fit: BoxFit.contain,
+                                            height: 16.h,
+                                            width: 16.h,
+                                          ),
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          );
-                        }),
-                    ListView.separated(
-                        separatorBuilder: (context, index) => SizedBox(
-                              height: 8.h,
-                            ),
-                        physics: NeverScrollableScrollPhysics(),
-                        itemCount: 3,
-                        itemBuilder: (context, index) {
-                          return Container(
-                            height: 78.h,
-                            width: 367.w,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10.r),
-                                color: Colors.white),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                    left: 16.w,
-                                  ),
-                                  child: Text((index + 1).toString()),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(left: 8.h),
-                                  child: Image.asset(
-                                    'assets/images/img_profile.png',
-                                    fit: BoxFit.contain,
-                                    height: 44.h,
-                                    width: 44.h,
-                                  ),
-                                ),
-                                Padding(
-                                  padding:
-                                      EdgeInsets.only(left: 10.w, top: 17.h),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text('@marterium',style: GoogleFonts.roboto(
-                                        color: Colors.black,
-                                      )),
-                                      SizedBox(
-                                        height: 4.h,
-                                      ),
-                                      Text('Floor:1.66ETH',style: GoogleFonts.roboto(
-                                        color: Colors.black,
-                                      ))
-                                    ],
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                    left: 14.w,
-                                  ),
-                                  child: Row(
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                            bottom: 40.h, top: 21.h),
-                                        child: Image.asset(
-                                          'assets/images/coin.png',
-                                          fit: BoxFit.contain,
-                                          height: 16.h,
-                                          width: 16.h,
+                                        SizedBox(
+                                          width: 4.w,
                                         ),
-                                      ),
-                                      SizedBox(
-                                        width: 4.w,
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.only(top: 20.h),
-                                        child: Column(
-                                          children: [
-                                            Text('475.98 BNB',style: GoogleFonts.roboto(
-                                              color: Colors.black,
-                                            )),
-                                            SizedBox(
-                                              height: 4.h,
-                                            ),
-                                            Row(
-                                              children: [
-                                                Text('= \$4.8',style: GoogleFonts.roboto(
-                                                  color: Colors.black,
-                                                )),
-                                                Text('= +24.6%',style: GoogleFonts.roboto(
-                                                  color: Colors.black,
-                                                )),
-                                              ],
-                                            ),
-                                          ],
+                                        Padding(
+                                          padding: EdgeInsets.only(top: 20.h),
+                                          child: Column(
+                                            children: [
+                                              Text('475.98 BNB',style: GoogleFonts.roboto(
+                                                color: Colors.black,
+                                              )),
+                                              SizedBox(
+                                                height: 4.h,
+                                              ),
+                                              Row(
+                                                children: [
+                                                  Text('= \$4.8',style: GoogleFonts.roboto(
+                                                    color: Colors.black,
+                                                  )),
+                                                  Text('= +24.6%',style: GoogleFonts.roboto(
+                                                    color: Colors.black,
+                                                  )),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
-                            ),
-                          );
-                        }),
-                    ListView.separated(
-                        separatorBuilder: (context, index) => SizedBox(
-                              height: 8.h,
-                            ),
-                        physics: NeverScrollableScrollPhysics(),
-                        itemCount: 3,
-                        itemBuilder: (context, index) {
-                          return Container(
-                            height: 78.h,
-                            width: 367.w,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10.r),
-                                color: Colors.white),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                    left: 16.w,
+                                ],
+                              ),
+                            );
+                          }),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 15.w,right: 15.w),
+                      child: ListView.separated(
+                          separatorBuilder: (context, index) => SizedBox(
+                                height: 8.h,
+                              ),
+                          physics: NeverScrollableScrollPhysics(),
+                          itemCount: 3,
+                          itemBuilder: (context, index) {
+                            return Container(
+                              height: 78.h,
+                              width: 367.w,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10.r),
+                                  color: Colors.white), 
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                      left: 16.w,
+                                    ),
+                                    child: Text((index + 1).toString()),
                                   ),
-                                  child: Text((index + 1).toString()),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(left: 8.h),
-                                  child: Image.asset(
-                                    'assets/images/img_profile.png',
-                                    fit: BoxFit.contain,
-                                    height: 44.h,
-                                    width: 44.h,
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 8.h),
+                                    child: Image.asset(
+                                      'assets/images/img_profile.png',
+                                      fit: BoxFit.contain,
+                                      height: 44.h,
+                                      width: 44.h,
+                                    ),
                                   ),
-                                ),
-                                Padding(
-                                  padding:
-                                      EdgeInsets.only(left: 10.w, top: 17.h),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text('@marterium',style: GoogleFonts.roboto(
-                                        color: Colors.black,
-                                      )),
-                                      SizedBox(
-                                        height: 4.h,
-                                      ),
-                                      Text('Floor:1.66ETH',style: GoogleFonts.roboto(
-                                        color: Colors.black,
-                                      ))
-                                    ],
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                    left: 14.w,
-                                  ),
-                                  child: Row(
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                            bottom: 40.h, top: 21.h),
-                                        child: Image.asset(
-                                          'assets/images/coin.png',
-                                          fit: BoxFit.contain,
-                                          height: 16.h,
-                                          width: 16.h,
+                                  Padding(
+                                    padding:
+                                        EdgeInsets.only(left: 10.w, top: 17.h),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text('@marterium',style: GoogleFonts.roboto(
+                                          color: Colors.black,
+                                        )),
+                                        SizedBox(
+                                          height: 4.h,
                                         ),
-                                      ),
-                                      SizedBox(
-                                        width: 4.w,
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.only(top: 20.h),
-                                        child: Column(
-                                          children: [
-                                            Text('475.98 BNB',style: GoogleFonts.roboto(
-                                              color: Colors.black,
-                                            )),
-                                            SizedBox(
-                                              height: 4.h,
-                                            ),
-                                            Row(
-                                              children: [
-                                                Text('= \$4.8',style: GoogleFonts.roboto(
-                                                  color: Colors.black,
-                                                )),
-                                                Text('= +24.6%',style: GoogleFonts.roboto(
-                                                  color: Colors.black,
-                                                )),
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
+                                        Text('Floor:1.66ETH',style: GoogleFonts.roboto(
+                                          color: Colors.black,
+                                        ))
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
-                            ),
-                          );
-                        }),
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                      left: 14.w,
+                                    ),
+                                    child: Row(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              bottom: 40.h, top: 21.h),
+                                          child: Image.asset(
+                                            'assets/images/coin.png',
+                                            fit: BoxFit.contain,
+                                            height: 16.h,
+                                            width: 16.h,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 4.w,
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.only(top: 20.h),
+                                          child: Column(
+                                            children: [
+                                              Text('475.98 BNB',style: GoogleFonts.roboto(
+                                                color: Colors.black,
+                                              )),
+                                              SizedBox(
+                                                height: 4.h,
+                                              ),
+                                              Row(
+                                                children: [
+                                                  Text('= \$4.8',style: GoogleFonts.roboto(
+                                                    color: Colors.black,
+                                                  )),
+                                                  Text('= +24.6%',style: GoogleFonts.roboto(
+                                                    color: Colors.black,
+                                                  )),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          }),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 15.w,right: 15.w),
+                      child: ListView.separated(
+                          separatorBuilder: (context, index) => SizedBox(
+                                height: 8.h,
+                              ),
+                          physics: NeverScrollableScrollPhysics(),
+                          itemCount: 3,
+                          itemBuilder: (context, index) {
+                            return Container(
+                              height: 78.h,
+                              width: 367.w,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10.r),
+                                  color: Colors.white),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                      left: 16.w,
+                                    ),
+                                    child: Text((index + 1).toString()),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 8.h),
+                                    child: Image.asset(
+                                      'assets/images/img_profile.png',
+                                      fit: BoxFit.contain,
+                                      height: 44.h,
+                                      width: 44.h,
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding:
+                                        EdgeInsets.only(left: 10.w, top: 17.h),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text('@marterium',style: GoogleFonts.roboto(
+                                          color: Colors.black,
+                                        )),
+                                        SizedBox(
+                                          height: 4.h,
+                                        ),
+                                        Text('Floor:1.66ETH',style: GoogleFonts.roboto(
+                                          color: Colors.black,
+                                        ))
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                      left: 14.w,
+                                    ),
+                                    child: Row(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              bottom: 40.h, top: 21.h),
+                                          child: Image.asset(
+                                            'assets/images/coin.png',
+                                            fit: BoxFit.contain,
+                                            height: 16.h,
+                                            width: 16.h,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 4.w,
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.only(top: 20.h),
+                                          child: Column(
+                                            children: [
+                                              Text('475.98 BNB',style: GoogleFonts.roboto(
+                                                color: Colors.black,
+                                              )),
+                                              SizedBox(
+                                                height: 4.h,
+                                              ),
+                                              Row(
+                                                children: [
+                                                  Text('= \$4.8',style: GoogleFonts.roboto(
+                                                    color: Colors.black,
+                                                  )),
+                                                  Text('= +24.6%',style: GoogleFonts.roboto(
+                                                    color: Colors.black,
+                                                  )),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          }),
+                    ),
                   ],
                 ),
               ),

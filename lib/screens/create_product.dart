@@ -92,7 +92,7 @@ class _CreateProductState extends State<CreateProduct> {
                     children: [
                       Text('Create an NFT',style: GoogleFonts.roboto(fontSize: 20.sp,fontWeight: FontWeight.bold),),
                       SizedBox(height: 16.h,),
-                      Text('Import image, video or audio',style: GoogleFonts.roboto(fontSize: 16,fontWeight: FontWeight.bold),),
+                      Text('Import image, video or audio',style: GoogleFonts.roboto(fontSize: 16.sp,fontWeight: FontWeight.bold),),
                       SizedBox(height: 16.h,),
                       Text('File types supported: JPGM PNG, IF, SVG, MP3, WAV, MP4, MAX size 50 MB',style: GoogleFonts.roboto(fontSize: 14.sp,color: AppColors.grey2),),
                     ],
@@ -111,8 +111,7 @@ class _CreateProductState extends State<CreateProduct> {
                       height: 200.h,
                       width: 350.w,
                       child: Container(
-                        padding: const EdgeInsets.all(
-                            16.0),
+                        padding: const EdgeInsets.all(16.0),
                         child: Center(
                           child: Stack(
                             children: [
@@ -415,7 +414,7 @@ class _CreateProductState extends State<CreateProduct> {
                       SizedBox(width: 70.w,),
                       SizedBox(
                         height: 60.h,
-                        width: 179.w,
+                        width: 178.w,
                         child: ElevatedButton(onPressed: (){}, child: Text('Create',style: GoogleFonts.roboto(fontSize: 16.sp,color: AppColors.grey),),
                           style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.black,

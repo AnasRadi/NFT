@@ -8,6 +8,7 @@ import 'package:nft/widget/card_search_collections_gridview_widget.dart';
 import 'package:nft/widget/card_search_collections_listview_widget.dart';
 import 'package:nft/widget/card_search_trending_gridview_widget.dart';
 import 'package:nft/widget/card_search_trending_listview_widget.dart';
+import 'package:nft/widget/card_search_users_widget.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -137,7 +138,7 @@ class _SearchScreenState extends State<SearchScreen> {
             ],
             bottom: TabBar(
               indicatorColor: AppColors.black,
-              indicatorWeight: 4.w,
+              indicatorWeight: 3.w,
               tabs: [
                 RepeatedTab(lable: 'Trending'),
                 RepeatedTab(lable: 'Collections'),
@@ -167,8 +168,17 @@ class _SearchScreenState extends State<SearchScreen> {
              },separatorBuilder: (context, index) => SizedBox(height: 24.h,),
            ) :ListView.separated(itemBuilder: (context, index) => ContainerSearchCollectionsListViewWidget(),
                separatorBuilder: (context, index) => SizedBox(height: 5.h,), itemCount: 5),
+              isCheck == false ? ListView.builder(
+                  itemCount: 12,
+                  itemBuilder: (BuildContext context, int index) {
+                    return ContainerSearchUsersWidget(num: (index+1).toString());
+                  }):ListView.builder(
+                  itemCount: 12,
+                  itemBuilder: (BuildContext context, int index) {
+                    return ContainerSearchUsersWidget(num: (index+1).toString());
+                  }),
 
-              SearchUsersScreen(),
+
             ],
           ),
         ),
