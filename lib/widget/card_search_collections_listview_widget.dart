@@ -19,6 +19,9 @@ class ContainerSearchCollectionsListViewWidget extends StatelessWidget {
         width: 366.w,
         height: 359.h,
         child: Card(
+          color:  Theme.of(context).brightness == Brightness.light
+              ? Colors.white
+              : AppColors.black,
             elevation: 10.0,
             clipBehavior: Clip.antiAliasWithSaveLayer,
             shape: RoundedRectangleBorder(

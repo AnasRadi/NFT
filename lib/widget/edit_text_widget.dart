@@ -22,7 +22,7 @@ class EditTextWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: TextField(
-controller: controller,
+        controller: controller,
         keyboardType: TextInputType.text,
         decoration: InputDecoration(
             contentPadding: EdgeInsets.symmetric(vertical: size),
@@ -35,12 +35,17 @@ controller: controller,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(name,style: GoogleFonts.roboto(
-                color: Colors.black,
-
+                color: Theme.of(context).brightness == Brightness.light
+                    ? AppColors.black
+                    : AppColors.white,
                 ),),
                     Text(
                       star,
-                      style: TextStyle(color: AppColors.red),
+                      style: TextStyle(color:
+                      Theme.of(context).brightness == Brightness.light
+                          ? AppColors.black
+                          : AppColors.white,
+                          ),
                     ),
                   ],
                 ),
@@ -50,14 +55,18 @@ controller: controller,
               borderRadius: BorderRadius.circular(10.r),
               borderSide: BorderSide(
                 width: 2.w,
-                color: AppColors.black,
+                color: Theme.of(context).brightness == Brightness.light
+                    ? AppColors.black
+                    : AppColors.white,
               ),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10.r),
               borderSide: BorderSide(
                 width: 2.w,
-                color: AppColors.black,
+                color: Theme.of(context).brightness == Brightness.light
+                    ? AppColors.black
+                    : AppColors.white,
               ),
             ),
             focusedBorder: OutlineInputBorder(
@@ -71,7 +80,9 @@ controller: controller,
               borderRadius: BorderRadius.circular(10.r),
               borderSide: BorderSide(
                 width: 2.w,
-                color: AppColors.red,
+                color:Theme.of(context).brightness == Brightness.light
+                    ? AppColors.black
+                    : AppColors.white,
               ),
             )),
       ),

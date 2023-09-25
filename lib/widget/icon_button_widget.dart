@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../constants/app.colors.dart';
 class IconButtonWidget extends StatelessWidget {
   String name;
   String img;
@@ -19,7 +21,10 @@ class IconButtonWidget extends StatelessWidget {
         width: 179.w,
         height: 60.h,
         decoration: BoxDecoration(
-            color: Color(0xFfEBEDF2),
+            color:
+            Theme.of(context).brightness == Brightness.light
+            ? Color(0xFfEBEDF2)
+            : AppColors.black3,
             borderRadius: BorderRadius.circular(16.r)
         ),
 

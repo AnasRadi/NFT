@@ -18,6 +18,9 @@ class ContainerActivityWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Theme.of(context).brightness == Brightness.light
+          ? Colors.grey.shade100
+          : AppColors.black,
       elevation: 10,
       margin: EdgeInsets.all(10),
       shape: RoundedRectangleBorder(

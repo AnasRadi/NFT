@@ -21,11 +21,17 @@ class _CartScreenState extends State<CartScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade100,
-      appBar: AppBar(
+      backgroundColor:
+      Theme.of(context).brightness == Brightness.light
+          ? Colors.grey.shade100
+          : AppColors.black2,
+    appBar: AppBar(
         title: Text(
           'Cart',
-          style: GoogleFonts.roboto(color: Colors.black, fontSize: 14.sp),
+          style: GoogleFonts.roboto(color: Theme.of(context).brightness == Brightness.light
+              ? AppColors.black
+              : AppColors.white,
+              fontSize: 14.sp),
         ),
         centerTitle: true,
         elevation: 0,
@@ -34,6 +40,9 @@ class _CartScreenState extends State<CartScreen> {
         automaticallyImplyLeading: true,
         actions: [
           PopupMenuButton<String>(
+            color: Theme.of(context).brightness == Brightness.light
+                ? AppColors.black
+                : AppColors.white,
             shape: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15.r),
                 borderSide: BorderSide(color: Colors.white)),
@@ -111,10 +120,15 @@ class _CartScreenState extends State<CartScreen> {
                     child: Container(
                       width: 366.w,
                       height: 100.h,
+
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10.r),
-                          color: Colors.white,
-                          border: Border.all(color: Colors.white)),
+                          color:  Theme.of(context).brightness == Brightness.light
+                              ? AppColors.white
+                              : AppColors.black,
+                          border: Border.all(color:  Theme.of(context).brightness == Brightness.light
+                              ? AppColors.white
+                              : AppColors.black,)),
                       child: Padding(
                         padding: EdgeInsets.only(top: 16.h),
                         child: Row(
@@ -154,13 +168,18 @@ class _CartScreenState extends State<CartScreen> {
                                           decoration: BoxDecoration(
                                               borderRadius:
                                                   BorderRadius.circular(8.r),
-                                              color: Colors.white,
+                                              color:  Theme.of(context).brightness == Brightness.light
+                                                  ? AppColors.white
+                                                  : AppColors.black,
                                               border: Border.all(
                                                   width: 2.w,
                                                   color: Colors.grey.shade400)),
                                           child: Icon(
                                             Icons.remove,
-                                            color: AppColors.black,
+                                            color:
+                                            Theme.of(context).brightness == Brightness.light
+                                                ? AppColors.black
+                                                : AppColors.white,
                                           ),
                                         ),
                                       ),
@@ -186,13 +205,18 @@ class _CartScreenState extends State<CartScreen> {
                                           decoration: BoxDecoration(
                                               borderRadius:
                                                   BorderRadius.circular(8.r),
-                                              color: Colors.white,
+                                              color: Theme.of(context).brightness == Brightness.light
+                                                  ? AppColors.white
+                                                  : AppColors.black,
                                               border: Border.all(
                                                   width: 2.w,
                                                   color: Colors.grey.shade400)),
                                           child: Icon(
                                             Icons.add,
-                                            color: AppColors.black,
+                                            color:
+                                            Theme.of(context).brightness == Brightness.light
+                                                ? AppColors.black
+                                                : AppColors.white,
                                           ),
                                         ),
                                       )
@@ -228,7 +252,9 @@ class _CartScreenState extends State<CartScreen> {
                                     ),
                                     Text('0.49 BNB',
                                         style: GoogleFonts.roboto(
-                                            color: Colors.black,
+                                            color:  Theme.of(context).brightness == Brightness.light
+                                                ? AppColors.black
+                                                : AppColors.white,
                                             fontWeight: FontWeight.w400,
                                             fontSize: 16.sp)),
                                   ],
@@ -256,7 +282,9 @@ class _CartScreenState extends State<CartScreen> {
                   children: [
                     Text('Original price',
                         style: GoogleFonts.roboto(
-                            color: Colors.black,
+                            color: Theme.of(context).brightness == Brightness.light
+                                ? AppColors.black
+                                : AppColors.white,
                             fontWeight: FontWeight.w400,
                             fontSize: 16.sp)),
                     Row(
@@ -272,7 +300,9 @@ class _CartScreenState extends State<CartScreen> {
                         ),
                         Text('0.49 BNB',
                             style: GoogleFonts.roboto(
-                                color: Colors.black,
+                                color:  Theme.of(context).brightness == Brightness.light
+                                    ? AppColors.black
+                                    : AppColors.white,
                                 fontWeight: FontWeight.w400,
                                 fontSize: 16.sp)),
                       ],
@@ -289,7 +319,9 @@ class _CartScreenState extends State<CartScreen> {
                       children: [
                         Text('VAT',
                             style: GoogleFonts.roboto(
-                                color: Colors.black,
+                                color:  Theme.of(context).brightness == Brightness.light
+                                    ? AppColors.black
+                                    : AppColors.white,
                                 fontWeight: FontWeight.w400,
                                 fontSize: 16.sp)),
                         Text('(Czech Republic)'),
@@ -308,7 +340,9 @@ class _CartScreenState extends State<CartScreen> {
                         ),
                         Text('0.49 BNB',
                             style: GoogleFonts.roboto(
-                                color: Colors.black,
+                                color:  Theme.of(context).brightness == Brightness.light
+                                    ? AppColors.black
+                                    : AppColors.white,
                                 fontWeight: FontWeight.w400,
                                 fontSize: 16.sp)),
                       ],
@@ -323,7 +357,9 @@ class _CartScreenState extends State<CartScreen> {
                   children: [
                     Text('Discounted price',
                         style: GoogleFonts.roboto(
-                            color: Colors.black,
+                            color: Theme.of(context).brightness == Brightness.light
+                                ? AppColors.black
+                                : AppColors.white,
                             fontWeight: FontWeight.w400,
                             fontSize: 16.sp)),
                     Row(
@@ -339,7 +375,9 @@ class _CartScreenState extends State<CartScreen> {
                         ),
                         Text('0.49 BNB',
                             style: GoogleFonts.roboto(
-                                color: Colors.black,
+                                color:  Theme.of(context).brightness == Brightness.light
+                                    ? AppColors.black
+                                    : AppColors.white,
                                 fontWeight: FontWeight.w400,
                                 fontSize: 16.sp)),
                       ],

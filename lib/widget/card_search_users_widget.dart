@@ -19,6 +19,9 @@ class ContainerSearchUsersWidget extends StatelessWidget {
       width: 366.w,
       height: 160.h,
       child: Card(
+        color:  Theme.of(context).brightness == Brightness.light
+            ? Colors.white
+            : AppColors.black,
         elevation: 10,
         margin: EdgeInsets.all(10),
         shape: RoundedRectangleBorder(
@@ -89,7 +92,11 @@ class ContainerSearchUsersWidget extends StatelessWidget {
 
                             Text(
                               "15,085,035.95",
-                              style: GoogleFonts.roboto(fontSize: 16.sp,fontWeight: FontWeight.w400,color: AppColors.black2),
+                              style: GoogleFonts.roboto(fontSize: 16.sp,fontWeight: FontWeight.w400,color:
+                              Theme.of(context).brightness == Brightness.light
+                                  ? AppColors.black2
+                                  : AppColors.white,
+                              ),
                             ),
                           ],
                         ),
@@ -111,7 +118,10 @@ class ContainerSearchUsersWidget extends StatelessWidget {
 
                             Text(
                               "111,850",
-                              style: GoogleFonts.roboto(fontSize: 16.sp,fontWeight: FontWeight.w400,color: AppColors.black2),
+                              style: GoogleFonts.roboto(fontSize: 16.sp,fontWeight: FontWeight.w400,color:
+                              Theme.of(context).brightness == Brightness.light
+                                  ? AppColors.black2
+                                  : AppColors.white,),
                             ),
 
                           ],
@@ -134,7 +144,10 @@ class ContainerSearchUsersWidget extends StatelessWidget {
 
                             Text(
                               "50,850",
-                              style: GoogleFonts.roboto(fontSize: 16.sp,fontWeight: FontWeight.w400,color: AppColors.black2),
+                              style: GoogleFonts.roboto(fontSize: 16.sp,fontWeight: FontWeight.w400,color:
+                              Theme.of(context).brightness == Brightness.light
+                                  ? AppColors.black2
+                                  : AppColors.white,),
                             ),
 
                           ],
@@ -160,7 +173,10 @@ class ContainerSearchUsersWidget extends StatelessWidget {
 
                             Text(
                               "10,150",
-                              style: GoogleFonts.roboto(fontSize: 16.sp,fontWeight: FontWeight.w400,color: AppColors.black2),
+                              style: GoogleFonts.roboto(fontSize: 16.sp,fontWeight: FontWeight.w400,color:
+                              Theme.of(context).brightness == Brightness.light
+                                  ? AppColors.black2
+                                  : AppColors.white,),
                             ),
 
                           ],

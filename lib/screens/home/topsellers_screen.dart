@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../constants/app.colors.dart';
+
 class TopSellersScreen extends StatefulWidget {
   const TopSellersScreen({super.key});
 
@@ -16,7 +18,9 @@ class _TopSellersScreenState extends State<TopSellersScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade100,
+      backgroundColor: Theme.of(context).brightness == Brightness.light
+          ? Colors.grey.shade100
+          : AppColors.black2,
       appBar: AppBar(
         iconTheme: IconThemeData.fallback(),
         automaticallyImplyLeading: true,
@@ -24,10 +28,15 @@ class _TopSellersScreenState extends State<TopSellersScreen> {
         elevation: 0,
         centerTitle: true,
         title: Text('Top Sellers',style: GoogleFonts.roboto(
-          color: Colors.black,
+          color: Theme.of(context).brightness == Brightness.light
+              ? Colors.black
+              : AppColors.white,
         )),
         actions: [
           PopupMenuButton<String>(
+            color: Theme.of(context).brightness == Brightness.light
+          ? Colors.black
+          : AppColors.white,
             shape: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15.r),
                 borderSide: BorderSide(
@@ -84,7 +93,9 @@ class _TopSellersScreenState extends State<TopSellersScreen> {
               width: 367.w,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25.r),
-                  color: Colors.white
+                  color: Theme.of(context).brightness == Brightness.light
+                      ? Colors.white
+                      : AppColors.black,
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -112,13 +123,17 @@ class _TopSellersScreenState extends State<TopSellersScreen> {
                       CrossAxisAlignment.start,
                       children: [
                         Text('@marterium',style: GoogleFonts.roboto(
-                          color: Colors.black,
+                          color: Theme.of(context).brightness == Brightness.light
+                              ? Colors.black
+                              : AppColors.white,
                         )),
                         SizedBox(
                           height: 4.h,
                         ),
                         Text('Floor:1.66ETH',style: GoogleFonts.roboto(
-                          color: Colors.black,
+                          color: Theme.of(context).brightness == Brightness.light
+                              ? Colors.black
+                              : AppColors.white,
                         ))
                       ],
                     ),
@@ -147,7 +162,9 @@ class _TopSellersScreenState extends State<TopSellersScreen> {
                           child: Column(
                             children: [
                               Text('475.98 BNB',style: GoogleFonts.roboto(
-                                color: Colors.black,
+                                color:Theme.of(context).brightness == Brightness.light
+                                    ? Colors.black
+                                    : AppColors.white,
                               )),
                               SizedBox(
                                 height: 4.h,
@@ -155,10 +172,14 @@ class _TopSellersScreenState extends State<TopSellersScreen> {
                               Row(
                                 children: [
                                   Text('= \$4.8',style: GoogleFonts.roboto(
-                                    color: Colors.black,
+                                    color: Theme.of(context).brightness == Brightness.light
+                                        ? Colors.black
+                                        : AppColors.white,
                                   )),
                                   Text('= +24.6%',style: GoogleFonts.roboto(
-                                    color: Colors.black,
+                                    color: Theme.of(context).brightness == Brightness.light
+                                        ? Colors.black
+                                        : AppColors.white,
                                   )),
                                 ],
                               ),

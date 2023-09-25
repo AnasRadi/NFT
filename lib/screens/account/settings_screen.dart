@@ -45,7 +45,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
     MyLocaleController controllerLang = Get.find();
 
     return Scaffold(
-      // backgroundColor: Colors.grey.shade100,
+      backgroundColor:
+      Theme.of(context).brightness == Brightness.light
+        ? Colors.grey.shade100
+        : AppColors.black2,
         appBar: AppBar(
           iconTheme: IconThemeData.fallback(),
           automaticallyImplyLeading: true,
@@ -53,10 +56,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
           elevation: 0,
           title: Text(
             'Settings'.tr,
+            style: GoogleFonts.roboto(
+              color:
+              Theme.of(context).brightness == Brightness.light
+                  ? Colors.black
+                  : AppColors.white,
+            ),
           ),
           centerTitle: true,
           actions: [
             PopupMenuButton<String>(
+              color:  Theme.of(context).brightness == Brightness.light
+            ? Colors.black
+            : AppColors.white,
               shape: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(15.r),
                   borderSide: BorderSide(color: Colors.white)),
@@ -71,13 +83,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
               itemBuilder: (context) {
                 return [
                   PopupMenuItem(
+
                     child: Text(
                       'Hi',
-                      style: GoogleFonts.roboto(),
                     ),
                     value: 'Hi',
                     textStyle: GoogleFonts.roboto(
-                      color: Colors.black,
+                      color: Theme.of(context).brightness == Brightness.light
+                          ? Colors.black
+                          : AppColors.white,
                     ),
                   ),
                   PopupMenuDivider(),
@@ -85,15 +99,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     child: Text('hello'),
                     value: 'hello',
                     textStyle: GoogleFonts.roboto(
-                      color: Colors.black,
+                      color:  Theme.of(context).brightness == Brightness.light
+                          ? Colors.black
+                          : AppColors.white,
                     ),
                   ),
                   PopupMenuDivider(),
                   PopupMenuItem(
-                    child: Text('hello hi'),
+                    child: Text('hello hi',),
                     value: 'hello hi',
                     textStyle: GoogleFonts.roboto(
-                      color: Colors.black,
+                      color:  Theme.of(context).brightness == Brightness.light
+                          ? Colors.black
+                          : AppColors.white,
                     ),
                   )
                 ];
@@ -110,7 +128,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   Text(
                     'Settings'.tr,
                     style: GoogleFonts.roboto(
-                        color: Colors.black,
+                        color:
+                        Theme.of(context).brightness == Brightness.light
+                            ? Colors.black
+                            : AppColors.white,
                         fontWeight: FontWeight.w700,
                         fontSize: 20.sp),
                   ),
@@ -146,7 +167,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     height: 70.h,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10.r),
-                        color: AppColors.white
+                      color:
+                      Theme.of(context).brightness == Brightness.light
+                          ? Colors.white
+                          : AppColors.black,
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -156,7 +180,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         SizedBox(width: 16.w,),
 
                         Text("Change Language".tr,style: GoogleFonts.roboto(
-                            color: Colors.black,
+                            color:Theme.of(context).brightness == Brightness.light
+                                ? Colors.black
+                                : Colors.white,
                             fontWeight: FontWeight.w500,
                             fontSize: 16.sp
                         ),),
@@ -166,7 +192,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           value: _chosenValue,
                           //elevation: 5,
                           style: GoogleFonts.roboto(color: Colors.white),
-                          iconEnabledColor:Colors.black,
+                          iconEnabledColor:Colors.white,
                           items: <String>[
                             'English'.tr , 'Arabic'.tr
                           ].map<DropdownMenuItem<String>>((String value) {
@@ -174,7 +200,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               value: value,
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Text(value,style:GoogleFonts.roboto(color:Colors.black,),),
+                                child: Text(value,style:GoogleFonts.roboto(           color:Theme.of(context).brightness == Brightness.light
+                                    ? Colors.black
+                                    : Colors.white,),),
                               ),
                             );
                           }).toList(),
@@ -211,16 +239,21 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     height: 70.h,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10.r),
-                        color: AppColors.white
-                    ),
+                      color:Theme.of(context).brightness == Brightness.light
+                          ? Colors.white
+                          : AppColors.black,                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         SizedBox(width: 21.w,),
-                        Icon(Icons.dark_mode,),
+                        Icon(Icons.dark_mode,color:Theme.of(context).brightness == Brightness.light
+                            ? Colors.black
+                            : Colors.white,),
                         SizedBox(width: 16.w,),
                         Text("Dark Mode".tr,style: GoogleFonts.roboto(
-                            color: Colors.black,
+                            color:Theme.of(context).brightness == Brightness.light
+                                ? Colors.black
+                                : Colors.white,
                             fontWeight: FontWeight.w500,
                             fontSize: 16.sp
                         ),),
@@ -271,6 +304,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   CardSettingWidget(
                       onPressed: () {},
                       icon: Icons.logout_outlined, name: 'Logout'.tr),
+                  SizedBox(
+                    height: 20.h,
+                  ),
                 ],
               ),
             ),

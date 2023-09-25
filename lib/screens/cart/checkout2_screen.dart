@@ -105,115 +105,120 @@ class _CheckoutScreen2State extends State<CheckoutScreen2> {
           )
         ],
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: EdgeInsets.only(top: 5.h, left: 20.w, bottom: 5.h),
-            child: Text(
-              '1.Add your personal info',
-              style: GoogleFonts.roboto(
-                  fontSize: 26.sp,
-                  color: AppColors.black,
-                  fontWeight: FontWeight.bold),
+      body: Container(
+        color:Theme.of(context).brightness == Brightness.light
+            ? Colors.grey.shade100
+            : AppColors.black,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: EdgeInsets.only(top: 5.h, left: 20.w, bottom: 5.h),
+              child: Text(
+                '1.Add your personal info',
+                style: GoogleFonts.roboto(
+                    fontSize: 26.sp,
+                    color: AppColors.black,
+                    fontWeight: FontWeight.bold),
+              ),
             ),
-          ),
-          customRadioTile(
-            'Fedex',
-            'Option 1',
-            14.00,
-            selectedOption,
-                (value) {
-              setState(() {
-                selectedOption = value;
-              });
-            },
-          ),
-          SizedBox(height: 10.h,),
-          customRadioTile(
-            'DHL Worldwide',
-            'Option 2',
-            14.00,
-            selectedOption,
-                (value) {
-              setState(() {
-                selectedOption = value;
-              });
-            },
-          ),
-          SizedBox(height: 10.h,),
-          customRadioTile(
-            'Fedex Express',
-            'Option 3',
-            14.00,
-            selectedOption,
-                (value) {
-              setState(() {
-                selectedOption = value;
-              });
-            },
-          ),
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10.r),
-              color: Colors.white,
-
+            customRadioTile(
+              'Fedex',
+              'Option 1',
+              14.00,
+              selectedOption,
+                  (value) {
+                setState(() {
+                  selectedOption = value;
+                });
+              },
             ),
-            child: Column(
-              children: [
-                RadioListTile(
-                  title: Text('Inpost - Parcel locker'),
-                  value: 'Option 4',
-                  groupValue: selectedOption,
-                  onChanged: (value) {
-                    setState(() {
-                      selectedOption = value!;
-                    });
-                    },
-                  secondary:Text('+\$4.00') ,
-                ),
-                EditTextWidget(star: '*',controller: _locationrController,name: 'Location',size: 20,),
-              ],
+            SizedBox(height: 10.h,),
+            customRadioTile(
+              'DHL Worldwide',
+              'Option 2',
+              14.00,
+              selectedOption,
+                  (value) {
+                setState(() {
+                  selectedOption = value;
+                });
+              },
             ),
-          ),
-          Spacer(),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('Totla:',style: GoogleFonts.roboto(
-                        color: AppColors.black2,
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w400
-                    ),),
-                    SizedBox(height: 8.h,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-
-                        Image.asset('assets/images/coin.png',width: 24.w,height: 24.h,),
-                        SizedBox(width: 4.w,),
-                        Text('24.55 BNB',style: GoogleFonts.roboto(
-                            color: Colors.black,
-                            fontSize: 20.sp,
-                            fontWeight: FontWeight.w500
-                        ),)
-                      ],)
-                  ],
-                ),
-                ButtonProfileWidget(name: 'Next', onTap:_incrementCustomStepper, nameColorBorder: Colors.white, BackgroundColor: AppColors.black2)
-              ],
+            SizedBox(height: 10.h,),
+            customRadioTile(
+              'Fedex Express',
+              'Option 3',
+              14.00,
+              selectedOption,
+                  (value) {
+                setState(() {
+                  selectedOption = value;
+                });
+              },
             ),
-          )
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10.r),
+                color: Colors.white,
+
+              ),
+              child: Column(
+                children: [
+                  RadioListTile(
+                    title: Text('Inpost - Parcel locker'),
+                    value: 'Option 4',
+                    groupValue: selectedOption,
+                    onChanged: (value) {
+                      setState(() {
+                        selectedOption = value!;
+                      });
+                      },
+                    secondary:Text('+\$4.00') ,
+                  ),
+                  EditTextWidget(star: '*',controller: _locationrController,name: 'Location',size: 20,),
+                ],
+              ),
+            ),
+            Spacer(),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Totla:',style: GoogleFonts.roboto(
+                          color: AppColors.black2,
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w400
+                      ),),
+                      SizedBox(height: 8.h,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+
+                          Image.asset('assets/images/coin.png',width: 24.w,height: 24.h,),
+                          SizedBox(width: 4.w,),
+                          Text('24.55 BNB',style: GoogleFonts.roboto(
+                              color: Colors.black,
+                              fontSize: 20.sp,
+                              fontWeight: FontWeight.w500
+                          ),)
+                        ],)
+                    ],
+                  ),
+                  ButtonProfileWidget(name: 'Next', onTap:_incrementCustomStepper, nameColorBorder: Colors.white, BackgroundColor: AppColors.black2)
+                ],
+              ),
+            )
 
 
 
-        ],
+          ],
+        ),
       ),
 
     );

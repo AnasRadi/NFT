@@ -6,6 +6,8 @@ import 'package:nft/screens/account/settings_screen.dart';
 import 'package:nft/widget/button_profile_widget.dart';
 import 'package:nft/widget/card_profile_widget.dart';
 
+import '../../constants/app.colors.dart';
+
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
@@ -31,14 +33,21 @@ class _ProfileScreenState extends State<ProfileScreen>with SingleTickerProviderS
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade100,
+
+      backgroundColor: Theme.of(context).brightness == Brightness.light
+          ? Colors.grey.shade100
+          : AppColors.black2,
       appBar: AppBar(
         iconTheme: IconThemeData.fallback(),
         automaticallyImplyLeading: true,
         backgroundColor: Colors.transparent,
         elevation: 0,
         actions: [
-          IconButton(onPressed: () =>Get.to(SettingsScreen()), icon: Icon(Icons.settings_outlined))
+          IconButton(onPressed: () =>Get.to(SettingsScreen()), icon: Icon(Icons.settings_outlined,color:
+          Theme.of(context).brightness == Brightness.light
+              ? AppColors.black
+              : AppColors.white,
+              )),
         ],
       ),
       body: ListView(
@@ -81,7 +90,10 @@ class _ProfileScreenState extends State<ProfileScreen>with SingleTickerProviderS
                 '@YFI Fan',
                 textAlign: TextAlign.center,
                 style: GoogleFonts.roboto(
-                    color: Colors.black,
+                    color:
+                    Theme.of(context).brightness == Brightness.light
+                        ? AppColors.black
+                        : AppColors.white,
                     fontWeight: FontWeight.w700,
                     fontSize: 16.sp),
               ),
@@ -94,7 +106,10 @@ class _ProfileScreenState extends State<ProfileScreen>with SingleTickerProviderS
                 'Artist / Creative Director / #NFT ',
                 textAlign: TextAlign.center,
                 style: GoogleFonts.roboto(
-                    color: Color(0xFF232632),
+
+                    color:  Theme.of(context).brightness == Brightness.light
+                        ? Color(0xFF232632)
+                        : AppColors.grey2,
                     fontWeight: FontWeight.w400,
                     fontSize: 14.sp),
               ),
@@ -152,8 +167,14 @@ class _ProfileScreenState extends State<ProfileScreen>with SingleTickerProviderS
           ),
           TabBar(
               controller: _tabController,
-              indicatorColor: Colors.black,
-              labelColor: Colors.black,
+              indicatorColor:
+              Theme.of(context).brightness == Brightness.light
+                  ? AppColors.black
+                  : AppColors.white,
+              labelColor:
+              Theme.of(context).brightness == Brightness.light
+                  ? AppColors.black
+                  : AppColors.white,
               indicatorWeight: 4,
               tabs: [
                 Tab(

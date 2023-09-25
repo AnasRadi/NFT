@@ -7,6 +7,8 @@ import 'package:get_storage/get_storage.dart';
 import 'package:nft/constants/app.theme.dart';
 import 'package:nft/screens/auth/sign_in.dart';
 
+import 'lang/locale_controller.dart';
+
 
 // bool darkMode = false;
 
@@ -29,7 +31,7 @@ class MyApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {
-          // Get.put(MyLocaleController());
+          Get.put(MyLocaleController());
           return GetMaterialApp(
             theme: ThemesService().lightTheme,
             darkTheme: ThemesService().darkTheme,

@@ -61,164 +61,188 @@ class _SignInState extends State<SignIn> {
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: EdgeInsets.only(top: 25.h, left: 20.w, bottom: 20.h),
-              child: Text(
-                'Log in',
-                style: GoogleFonts.roboto(
-                    fontSize: 26.sp,
-                    color: AppColors.black,
-                    fontWeight: FontWeight.bold),
+        body: Container(
+          color: Theme.of(context).brightness == Brightness.light
+              ? Colors.grey.shade100
+              : AppColors.black2,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.only(top: 25.h, left: 20.w, bottom: 20.h),
+                child: Text(
+                  'Log in',
+                  style: GoogleFonts.roboto(
+                      fontSize: 26.sp,
+                      color: Theme.of(context).brightness == Brightness.light
+                          ? AppColors.black
+                          : AppColors.white,
+                      fontWeight: FontWeight.bold),
+                ),
               ),
-            ),
-            EditTextWidget(star: '*',controller: _phoneTextController,name: 'Phone number',size: 20,),
+              EditTextWidget(star: '*',controller: _phoneTextController,name: 'Phone number',size: 20,),
 
 
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: TextField(
-                keyboardType: TextInputType.text,
-                obscureText: !_showPassword,
-                expands: false,
-                decoration: InputDecoration(
-                    errorText: _passwordError,
-                    label: SizedBox(
-                      width: 120.w,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text('Password'.tr),
-                          Text(
-                            " *",
-                            style: TextStyle(color: Colors.red),
-                          ),
-                        ],
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: TextField(
+                  keyboardType: TextInputType.text,
+                  obscureText: !_showPassword,
+                  expands: false,
+                  decoration: InputDecoration(
+                      errorText: _passwordError,
+                      label: SizedBox(
+                        width: 120.w,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Password'.tr),
+                            Text(
+                              " *",
+                              style: TextStyle(color:  Theme.of(context).brightness == Brightness.light
+                                  ? AppColors.black
+                                  : AppColors.white,),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.r),
-                      borderSide: BorderSide(
-                        width: 2.w,
-                        color: AppColors.black,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.r),
+                        borderSide: BorderSide(
+                          width: 2.w,
+                          color:  Theme.of(context).brightness == Brightness.light
+                              ? AppColors.black
+                              : AppColors.white,
+                        ),
                       ),
-                    ),
-                    suffixIcon: IconButton(
-                      onPressed: () {
-                        setState(() {
-                          _showPassword = !_showPassword;
-                        });
-                      },
-                      icon: Icon(
-                        _showPassword ? Icons.visibility_off : Icons.visibility,
-                        color: AppColors.black,
+                      suffixIcon: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            _showPassword = !_showPassword;
+                          });
+                        },
+                        icon: Icon(
+                          _showPassword ? Icons.visibility_off : Icons.visibility,
+                          color:  Theme.of(context).brightness == Brightness.light
+                              ? AppColors.black
+                              : AppColors.white,
+                        ),
                       ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.r),
-                      borderSide: BorderSide(
-                        width: 2.w,
-                        color: AppColors.black,
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.r),
+                        borderSide: BorderSide(
+                          width: 2.w,
+                          color:  Theme.of(context).brightness == Brightness.light
+                              ? AppColors.black
+                              : AppColors.white,
+                        ),
                       ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.r),
-                      borderSide: BorderSide(
-                        width: 2.w,
-                        color: AppColors.black,
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.r),
+                        borderSide: BorderSide(
+                          width: 2.w,
+                          color:  Theme.of(context).brightness == Brightness.light
+                              ? AppColors.black
+                              : AppColors.white,
+                        ),
                       ),
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.r),
-                      borderSide: BorderSide(
-                        width: 2.w,
-                        color: AppColors.red,
-                      ),
-                    )),
+                      errorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.r),
+                        borderSide: BorderSide(
+                          width: 2.w,
+                          color: AppColors.red,
+                        ),
+                      )),
+                ),
               ),
-            ),
 
 
-            Padding(
-              padding: EdgeInsets.only(top: 5.h, left: 20.w),
-              child: RichText(
-                text: TextSpan(
-                  text: 'Forget password ? ',
-                  style: TextStyle(
-                    color: Color(0xff9391A4),
-                    fontSize: 14.sp,
+              Padding(
+                padding: EdgeInsets.only(top: 5.h, left: 20.w),
+                child: RichText(
+                  text: TextSpan(
+                    text: 'Forget password ? ',
+                    style: TextStyle(
+                      color: Theme.of(context).brightness == Brightness.light
+                        ? Color(0xff9391A4)
+                        : AppColors.white,
+                      fontSize: 14.sp,
+                    ),
+                    children: [
+                      // TextSpan(text: ' '),
+                      TextSpan(
+                        text: 'Tap here',
+                        recognizer: _tapGestureRecognizer,
+                        style:
+                            TextStyle(color: Theme.of(context).brightness == Brightness.light
+                                ? AppColors.black
+                                : AppColors.white, fontSize: 14.sp),
+                      )
+                    ],
                   ),
-                  children: [
-                    // TextSpan(text: ' '),
-                    TextSpan(
-                      text: 'Tap here',
-                      recognizer: _tapGestureRecognizer,
-                      style:
-                          TextStyle(color: AppColors.purple, fontSize: 14.sp),
-                    )
-                  ],
                 ),
               ),
-            ),
-            SizedBox(
-              height: 25.h,
-            ),
-            ButtonWidget(name: 'Log in',onPressed: ()=>Get.offAll(BnScreen()),),
-            SizedBox(
-              height: 25.h,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  width: 5.w,
-                ),
-                IconButtonWidget(
-                  onPressed: (){},
-                  name: 'Google',
-                  img: 'assets/icon/google.png',
-                ),
-                SizedBox(
-                  width: 5.w,
-                ),
-                IconButtonWidget(
-                  onPressed: (){},
-                  name: 'Apple',
-                  img: 'assets/icon/appstore.png',
-                ),
-                SizedBox(
-                  width: 5.w,
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 35.h,
-            ),
-            Center(
-              child: RichText(
-                text: TextSpan(
-                  text: 'Don\'t have an account yet ? ',
-                  style: TextStyle(
-                    color: Color(0xff9391A4),
-                    fontSize: 14.sp,
+              SizedBox(
+                height: 25.h,
+              ),
+              ButtonWidget(name: 'Log in',onPressed: ()=>Get.offAll(BnScreen()),),
+              SizedBox(
+                height: 25.h,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: 5.w,
                   ),
-                  children: [
-                    // TextSpan(text: ' '),
-                    TextSpan(
-                      text: 'Tap here',
-                      recognizer: _tapGestureRecognizer2,
-                      style:
-                          TextStyle(color: AppColors.purple, fontSize: 14.sp),
-                    )
-                  ],
+                  IconButtonWidget(
+                    onPressed: (){},
+                    name: 'Google',
+                    img: 'assets/icon/google.png',
+                  ),
+                  SizedBox(
+                    width: 5.w,
+                  ),
+                  IconButtonWidget(
+                    onPressed: (){},
+                    name: 'Apple',
+                    img: 'assets/icon/appstore.png',
+                  ),
+                  SizedBox(
+                    width: 5.w,
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 35.h,
+              ),
+              Center(
+                child: RichText(
+                  text: TextSpan(
+                    text: 'Don\'t have an account yet ? ',
+                    style: TextStyle(
+                      color:
+                      Theme.of(context).brightness == Brightness.light
+                          ? Color(0xff9391A4)
+                          : AppColors.black3,
+                      fontSize: 14.sp,
+                    ),
+                    children: [
+                      // TextSpan(text: ' '),
+                      TextSpan(
+                        text: 'Tap here',
+                        recognizer: _tapGestureRecognizer2,
+                        style:
+                            TextStyle(color: AppColors.purple, fontSize: 14.sp),
+                      )
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

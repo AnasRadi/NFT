@@ -6,19 +6,22 @@ class ThemesService {
   final darkTheme = ThemeData(
       brightness: Brightness.dark,
       primaryColor: AppColors.black2,
+      iconTheme: IconThemeData(color: Colors.white),
       appBarTheme: AppBarTheme(
-        color: AppColors.black2,
+        color: Colors.transparent,
         titleTextStyle: GoogleFonts.roboto(
           color: AppColors.white,
         ),
-      ),      buttonTheme: ButtonThemeData(
-    buttonColor: Colors.white,
+      ),
+      buttonTheme: ButtonThemeData(
+    buttonColor: Colors.black,
     disabledColor: AppColors.black2,
   ));
 
   final lightTheme = ThemeData(
       brightness: Brightness.light,
       primaryColor: Colors.white,
+      iconTheme: IconThemeData(color: Colors.black),
       appBarTheme: AppBarTheme(
         color: Colors.transparent,
         titleTextStyle: GoogleFonts.roboto(
@@ -27,6 +30,6 @@ class ThemesService {
       ),
       buttonTheme: ButtonThemeData(
           buttonColor: AppColors.black2,
-          disabledColor: Colors.white,
+          disabledColor: Colors.black,
           ));
 }

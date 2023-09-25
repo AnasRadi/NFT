@@ -7,6 +7,8 @@ import 'package:nft/screens/home/home_screen.dart';
 import 'package:nft/screens/account/profile_Screen.dart';
 import 'package:nft/screens/search/search_screen.dart';
 
+import '../constants/app.colors.dart';
+
 class BnScreen extends StatefulWidget {
   const BnScreen({Key? key}) : super(key: key);
 
@@ -41,14 +43,24 @@ class _BnScreenState extends State<BnScreen> {
         // type: BottomNavigationBarType.shifting,
         type: BottomNavigationBarType.fixed,
         //******************************
-        backgroundColor: Colors.white,
+        backgroundColor:
+        Theme.of(context).brightness == Brightness.light
+            ? AppColors.white
+            : AppColors.black2,
         //******************************
         showSelectedLabels: true,
         showUnselectedLabels: true,
         //******************************
         // fixedColor: Colors.pink,
-        selectedItemColor: Colors.blue.shade900,
-        unselectedItemColor: Colors.black26,
+        selectedItemColor:
+        Theme.of(context).brightness == Brightness.light
+            ? Colors.blue.shade900
+            : AppColors.white,
+
+        unselectedItemColor:
+        Theme.of(context).brightness == Brightness.light
+            ? Colors.black26
+            : AppColors.grey,
         //******************************
         //******************************
         selectedLabelStyle: GoogleFonts.nunito(

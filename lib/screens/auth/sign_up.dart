@@ -42,205 +42,222 @@ class _SignUPState extends State<SignUp> {
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: EdgeInsets.only(top: 25.h, left: 20.w, bottom: 20.h),
-              child: Text(
-                'Sign up',
-                style: GoogleFonts.roboto(
-                    fontSize: 26.sp,
-                    color: AppColors.black,
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: TextField(
-                keyboardType: TextInputType.phone,
-                decoration: InputDecoration(
-                    label: SizedBox(
-                      width: 120.w,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text('Phone number '),
-                          Text(
-                            " *",
-                            style: TextStyle(color: Colors.red),
-                          ),
-                        ],
-                      ),
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.r),
-                      borderSide: BorderSide(
-                        width: 2.w,
-                        color: Colors.black,
-                      ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.r),
-                      borderSide: BorderSide(
-                        width: 2.w,
-                        color: Colors.black,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.r),
-                      borderSide: BorderSide(
-                        width: 2.w,
-                        color: Colors.black,
-                      ),
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.r),
-                      borderSide: BorderSide(
-                        width: 2.w,
-                        color: Colors.red,
-                      ),
-                    )),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: TextField(
-                keyboardType: TextInputType.text,
-                obscureText: !_showPassword,
-                expands: false,
-                decoration: InputDecoration(
-                    errorText: _passwordError,
-                    label: SizedBox(
-                      width: 120.w,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text('Password '),
-                          Text(
-                            " *",
-                            style: TextStyle(color: Colors.red),
-                          ),
-                        ],
-                      ),
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.r),
-                      borderSide: BorderSide(
-                        width: 2.w,
-                        color: Colors.black,
-                      ),
-                    ),
-                    suffixIcon: IconButton(
-                      onPressed: () {
-                        setState(() {
-                          _showPassword = !_showPassword;
-                        });
-                      },
-                      icon: Icon(
-                        _showPassword ? Icons.visibility_off : Icons.visibility,
-                        color: Colors.black,
-                      ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.r),
-                      borderSide: BorderSide(
-                        width: 2.w,
-                        color: Colors.black,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.r),
-                      borderSide: BorderSide(
-                        width: 2.w,
-                        color: Colors.black,
-                      ),
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.r),
-                      borderSide: BorderSide(
-                        width: 2.w,
-                        color: Colors.red,
-                      ),
-                    )),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: TextField(
-                enabled: false,
-                keyboardType: TextInputType.text,
-                obscureText: !_showPassword,
-                expands: false,
-                decoration: InputDecoration(
-                    hintText: 'ABC',
-                    errorText: _passwordError,
-                    label: SizedBox(
-                      width: 120.w,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text('Refferal ID:'),
-                        ],
-                      ),
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.r),
-                      borderSide: BorderSide(
-                        width: 2.w,
-                        color: Colors.black,
-                      ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.r),
-                      borderSide: BorderSide(
-                        width: 2.w,
-                        color: Colors.black,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.r),
-                      borderSide: BorderSide(
-                        width: 2.w,
-                        color: Colors.black,
-                      ),
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.r),
-                      borderSide: BorderSide(
-                        width: 2.w,
-                        color: Colors.red,
-                      ),
-                    )),
-              ),
-            ),
-            Row(
-              children: [
-                Checkbox(
-                  activeColor: Colors.black12,
-                  focusColor: Colors.white,
-                  checkColor: AppColors.black,
-                  value: _check,
-                  onChanged: (value) {
-                    setState(() {
-                      _check = !_check;
-                    });
-                  },
+        body: Container(
+          color:  Theme.of(context).brightness == Brightness.light
+              ? Colors.grey.shade100
+              : AppColors.black2,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.only(top: 25.h, left: 20.w, bottom: 20.h),
+                child: Text(
+                  'Sign up',
+                  style: GoogleFonts.roboto(
+                      fontSize: 26.sp,
+                      color: Theme.of(context).brightness == Brightness.light
+                          ? AppColors.black
+                          : AppColors.white,
+                      fontWeight: FontWeight.bold),
                 ),
-                Text(
-                  'I have read and agree to BnB Terms of Service\n and Private Policy',
-                  style: TextStyle(color: AppColors.grey2),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: TextField(
+                  keyboardType: TextInputType.phone,
+                  decoration: InputDecoration(
+                      label: SizedBox(
+                        width: 120.w,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Phone number '),
+                            Text(
+                              " *",
+                              style: TextStyle(color: Colors.red),
+                            ),
+                          ],
+                        ),
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.r),
+                        borderSide: BorderSide(
+                          width: 2.w,
+                          color: Theme.of(context).brightness == Brightness.light
+                              ? AppColors.black
+                              : AppColors.white,                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.r),
+                        borderSide: BorderSide(
+                          width: 2.w,
+                          color: Theme.of(context).brightness == Brightness.light
+                              ? AppColors.black
+                              : AppColors.white,                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.r),
+                        borderSide: BorderSide(
+                          width: 2.w,
+                          color: Theme.of(context).brightness == Brightness.light
+                              ? AppColors.black
+                              : AppColors.white,                        ),
+                      ),
+                      errorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.r),
+                        borderSide: BorderSide(
+                          width: 2.w,
+                          color: Colors.red,
+                        ),
+                      )),
                 ),
-              ],
-            ),
-            ButtonWidget(
-                name: 'Create personal account',
-                onPressed: () => Get.to(SignIn())),
-          ],
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: TextField(
+                  keyboardType: TextInputType.text,
+                  obscureText: !_showPassword,
+                  expands: false,
+                  decoration: InputDecoration(
+                      errorText: _passwordError,
+                      label: SizedBox(
+                        width: 120.w,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Password '),
+                            Text(
+                              " *",
+                              style: TextStyle(color: Colors.red),
+                            ),
+                          ],
+                        ),
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.r),
+                        borderSide: BorderSide(
+                          width: 2.w,
+                          color: Theme.of(context).brightness == Brightness.light
+                              ? AppColors.black
+                              : AppColors.white,                        ),
+                      ),
+                      suffixIcon: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            _showPassword = !_showPassword;
+                          });
+                        },
+                        icon: Icon(
+                          _showPassword ? Icons.visibility_off : Icons.visibility,
+                          color: Theme.of(context).brightness == Brightness.light
+                              ? AppColors.black
+                              : AppColors.white,                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.r),
+                        borderSide: BorderSide(
+                          width: 2.w,
+                          color: Theme.of(context).brightness == Brightness.light
+                              ? AppColors.black
+                              : AppColors.white,                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.r),
+                        borderSide: BorderSide(
+                          width: 2.w,
+                          color: Theme.of(context).brightness == Brightness.light
+                              ? AppColors.black
+                              : AppColors.white,                        ),
+                      ),
+                      errorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.r),
+                        borderSide: BorderSide(
+                          width: 2.w,
+                          color: Colors.red,
+                        ),
+                      )),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: TextField(
+                  enabled: false,
+                  keyboardType: TextInputType.text,
+                  obscureText: !_showPassword,
+                  expands: false,
+                  decoration: InputDecoration(
+                      hintText: 'ABC',
+                      errorText: _passwordError,
+                      label: SizedBox(
+                        width: 120.w,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Refferal ID:'),
+                          ],
+                        ),
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.r),
+                        borderSide: BorderSide(
+                          width: 2.w,
+                          color: Theme.of(context).brightness == Brightness.light
+                              ? AppColors.black
+                              : AppColors.white,                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.r),
+                        borderSide: BorderSide(
+                          width: 2.w,
+                          color: Theme.of(context).brightness == Brightness.light
+                              ? AppColors.black
+                              : AppColors.white,                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.r),
+                        borderSide: BorderSide(
+                          width: 2.w,
+                          color: Theme.of(context).brightness == Brightness.light
+                              ? AppColors.black
+                              : AppColors.white,                        ),
+                      ),
+                      errorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.r),
+                        borderSide: BorderSide(
+                          width: 2.w,
+                          color: Colors.red,
+                        ),
+                      )),
+                ),
+              ),
+              Row(
+                children: [
+                  Checkbox(
+                    activeColor: Colors.black12,
+                    focusColor: Colors.white,
+                    checkColor: AppColors.black,
+                    value: _check,
+                    onChanged: (value) {
+                      setState(() {
+                        _check = !_check;
+                      });
+                    },
+                  ),
+                  Text(
+                    'I have read and agree to BnB Terms of Service\n and Private Policy',
+                    style: TextStyle(color: AppColors.grey2),
+                  ),
+                ],
+              ),
+              ButtonWidget(
+                  name: 'Create personal account',
+                  onPressed: () => Get.to(SignIn())),
+            ],
+          ),
         ),
       ),
     );

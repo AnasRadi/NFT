@@ -29,7 +29,10 @@ class _SearchScreenState extends State<SearchScreen> {
         child: Scaffold(
           appBar: AppBar(
             elevation: 0,
-            backgroundColor: Colors.white,
+            backgroundColor:
+            Theme.of(context).brightness == Brightness.light
+                ? Colors.grey.shade100
+                : AppColors.black2,
             toolbarHeight: 120.h,
             // Set this height
             flexibleSpace: Padding(
@@ -43,13 +46,21 @@ class _SearchScreenState extends State<SearchScreen> {
                         Container(
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(16.r),
-                                color: AppColors.grey),
+                                color:
+                                Theme.of(context).brightness == Brightness.light
+                                    ? AppColors.grey
+                                    : AppColors.black,
+                            ),
                             height: 56.h,
                             width: 56.w,
                             child: Image.asset(
                               'assets/icon/filter.png',
                               width: 22.w,
                               height: 18.h,
+                              color:
+                              Theme.of(context).brightness == Brightness.light
+                                  ? AppColors.black
+                                  : AppColors.white,
                             )),
                         SizedBox(
                           width: 10.w,
@@ -66,7 +77,10 @@ class _SearchScreenState extends State<SearchScreen> {
                               // Add a clear button to the search bar
                               suffixIcon: GestureDetector(
                                 onTap: () {},
-                                child: Icon(Icons.search),
+                                child: Icon(Icons.search,color:
+                                  Theme.of(context).brightness == Brightness.light
+                                      ? Colors.black
+                                      : AppColors.white,),
                               ),
                               // Add a search icon or button to the search bar
                               border: OutlineInputBorder(
@@ -85,8 +99,15 @@ class _SearchScreenState extends State<SearchScreen> {
                               });
                             },
                             icon: isCheck == false
-                                ? Image.asset('assets/icon/listview.png')
-                                : Image.asset('assets/icon/grid.png')),
+                                ? Image.asset('assets/icon/listview.png',color:
+                                Theme.of(context).brightness == Brightness.light
+                                ? Colors.black
+                                : AppColors.white,)
+                                : Image.asset('assets/icon/grid.png',color:
+                              Theme.of(context).brightness == Brightness.light
+                                  ? Colors.black
+                                  : AppColors.white,)
+                            ),
 
                       ],
                     ),
@@ -98,7 +119,10 @@ class _SearchScreenState extends State<SearchScreen> {
               Padding(
                 padding: EdgeInsets.only(bottom: 60.0.h),
                 child: PopupMenuButton<String>(
-                  color: Colors.black,
+                  color:
+                Theme.of(context).brightness == Brightness.light
+                    ? Colors.black
+                    : AppColors.white,
                   shape: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15.r),
                       borderSide: BorderSide(color: Colors.white)),
@@ -137,7 +161,10 @@ class _SearchScreenState extends State<SearchScreen> {
               )
             ],
             bottom: TabBar(
-              indicatorColor: AppColors.black,
+              indicatorColor:
+              Theme.of(context).brightness == Brightness.light
+                  ? AppColors.black
+                  : AppColors.white,
               indicatorWeight: 3.w,
               tabs: [
                 RepeatedTab(lable: 'Trending'),

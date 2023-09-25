@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../constants/app.colors.dart';
 class ContainerProfileWidget extends StatelessWidget {
 
   String img;
@@ -20,7 +22,10 @@ class ContainerProfileWidget extends StatelessWidget {
       height: 117.h,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.r),
-          color: Colors.white
+          color:
+          Theme.of(context).brightness == Brightness.light
+              ? Colors.white
+              : AppColors.black,
       ),
       child: Column(
         children: [

@@ -21,6 +21,9 @@ class ContainerSearchTrendingGridViewWidget extends StatelessWidget {
             height: 277.h,
             width: 178.w,
             child: Card(
+              color: Theme.of(context).brightness == Brightness.light
+                  ? Colors.white
+                  : AppColors.black,
                 elevation: 10.0,
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                 shape: RoundedRectangleBorder(
@@ -111,7 +114,9 @@ class ContainerSearchTrendingGridViewWidget extends StatelessWidget {
                                 height: 34.h,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10.r),
-                                  color: AppColors.grey,
+                                  color:Theme.of(context).brightness == Brightness.light
+                                      ? AppColors.grey
+                                      : AppColors.black2,
                                 ),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -119,7 +124,9 @@ class ContainerSearchTrendingGridViewWidget extends StatelessWidget {
                                     Icon(Icons.favorite,size: 16,),
                                     SizedBox(width: 2.w,),
                                     Text('3000', style: GoogleFonts.roboto(
-                                        color: AppColors.black2,
+                                        color:Theme.of(context).brightness == Brightness.light
+                                            ? AppColors.black2
+                                            : AppColors.white,
                                         fontSize: 12.sp,
                                         fontWeight: FontWeight.w400),),
                                   ],
@@ -147,7 +154,7 @@ class ContainerSearchTrendingGridViewWidget extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.access_time_outlined,size: 16,),
+                  Icon(Icons.access_time_outlined,size: 16,color: AppColors.black2,),
                   SizedBox(width: 2.w,),
                   Text('1:00:30', style: GoogleFonts.roboto(
                       color: AppColors.black2,

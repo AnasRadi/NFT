@@ -16,6 +16,9 @@ class ContainerSearchCollectionsGridViewWidget extends StatelessWidget {
     return Padding(
       padding:  EdgeInsets.symmetric(horizontal: 8.0.w,vertical: 8.h),
       child: Card(
+        color:  Theme.of(context).brightness == Brightness.light
+            ? Colors.white
+            : AppColors.black,
         elevation: 10,
         child: Container(
           height: 98.0.h,

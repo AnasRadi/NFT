@@ -22,7 +22,9 @@ class _ProductPageScreenState extends State<ProductPageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade100,
+      backgroundColor: Theme.of(context).brightness == Brightness.light
+          ? Colors.grey.shade100
+          : AppColors.black2,
       resizeToAvoidBottomInset: false,
 
       appBar: AppBar(
@@ -31,11 +33,16 @@ class _ProductPageScreenState extends State<ProductPageScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: Text('Product Page',style: GoogleFonts.roboto(
-          color: Colors.black,
+          color: Theme.of(context).brightness == Brightness.light
+              ? AppColors.black
+              : AppColors.white,
         ),),
         centerTitle: true,
         actions: [
           PopupMenuButton<String>(
+            color: Theme.of(context).brightness == Brightness.light
+          ? AppColors.black
+          : AppColors.white,
             shape: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15.r),
                 borderSide: BorderSide(
@@ -103,9 +110,11 @@ class _ProductPageScreenState extends State<ProductPageScreen> {
                   height: 56.h,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(16.r),
-                    color: Colors.grey.shade50
+                    color: Colors.grey.shade50.withOpacity(0.75)
                   ),
-                  child: Icon(Icons.favorite_border_outlined),
+                  child: Icon(Icons.favorite_border_outlined,color: Theme.of(context).brightness == Brightness.light
+                      ? AppColors.white
+                      : AppColors.black,),
                 ),
               )
 
@@ -116,7 +125,10 @@ class _ProductPageScreenState extends State<ProductPageScreen> {
             child: Text(
               'Bored Ape Yacht Club',
               style: GoogleFonts.roboto(
-                  color: AppColors.black2, fontSize: 28.sp,fontWeight: FontWeight.w500),
+                  color: Theme.of(context).brightness == Brightness.light
+                      ? AppColors.black2
+                      : AppColors.white
+                  , fontSize: 28.sp,fontWeight: FontWeight.w500),
             ),
           ),
           Padding(
@@ -133,12 +145,16 @@ class _ProductPageScreenState extends State<ProductPageScreen> {
                   width: 10.w,
                 ),
                 Text('created by: ',style: GoogleFonts.roboto(
-                  color: Colors.black,
+                    color: Theme.of(context).brightness == Brightness.light
+                        ? AppColors.black2
+                        : AppColors.white,
                     fontWeight: FontWeight.w400,
                     fontSize: 14.sp
                 ),),
                 Text('@marterium',style: GoogleFonts.roboto(
-                  color: Colors.black,
+                    color: Theme.of(context).brightness == Brightness.light
+                        ? AppColors.black2
+                        : AppColors.white,
                   fontWeight: FontWeight.w400,
                   fontSize: 14.sp
 
@@ -162,6 +178,7 @@ class _ProductPageScreenState extends State<ProductPageScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Text('Price',style: GoogleFonts.roboto(
+                        color: AppColors.black2,
                       fontWeight: FontWeight.w400,
                       fontSize: 14.sp
                     ),),
@@ -205,7 +222,8 @@ class _ProductPageScreenState extends State<ProductPageScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Text('Highest floor bid',style: GoogleFonts.roboto(
-                      fontWeight: FontWeight.w400,
+                        color: AppColors.black2,
+                        fontWeight: FontWeight.w400,
                       fontSize: 14.sp
                     ),),
                     Padding(
@@ -273,7 +291,9 @@ class _ProductPageScreenState extends State<ProductPageScreen> {
             width: 366.w,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10.r),
-                color: Colors.white
+                color: Theme.of(context).brightness == Brightness.light
+                    ? AppColors.white
+                    : AppColors.black,
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -366,7 +386,9 @@ class _ProductPageScreenState extends State<ProductPageScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text('Activity',style: GoogleFonts.roboto(
-                  color: Colors.black,
+                  color: Theme.of(context).brightness == Brightness.light
+                      ? Colors.black
+                      : AppColors.white,
                   fontWeight: FontWeight.w700,
                   fontSize: 20.sp
                 )),
@@ -374,7 +396,9 @@ class _ProductPageScreenState extends State<ProductPageScreen> {
                   onTap: ()=>Get.to(ActivityScreen()),
                   child: Row(
                     children: [Text('See all',style: GoogleFonts.roboto(
-                      color: Colors.black,
+                      color: Theme.of(context).brightness == Brightness.light
+                          ? Colors.black
+                          : AppColors.white,
                     )), Icon(Icons.arrow_forward_ios)],
                   ),
                 )
@@ -406,7 +430,9 @@ class _ProductPageScreenState extends State<ProductPageScreen> {
                     child: Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(18.r),
-                          color: Colors.white),
+                          color:Theme.of(context).brightness == Brightness.light
+                              ? Colors.grey.shade100
+                              : AppColors.black,),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -444,8 +470,15 @@ class _ProductPageScreenState extends State<ProductPageScreen> {
                                         mainAxisAlignment:
                                         MainAxisAlignment.spaceEvenly,
                                         children: [
-                                          Icon(Icons.access_time_outlined),
-                                          Text('05:22')
+                                          Icon(Icons.access_time_outlined,
+                                            color: Theme.of(context).brightness == Brightness.light
+                                                ? AppColors.white
+                                                : AppColors.black2,),
+                                          Text('05:22',style: GoogleFonts.roboto(
+                                            color: Theme.of(context).brightness == Brightness.light
+                                                ? AppColors.white
+                                                : AppColors.black2,
+                                          ),)
                                         ],
                                       ),
                                     ))
@@ -460,7 +493,10 @@ class _ProductPageScreenState extends State<ProductPageScreen> {
                             child: Text(
                               'Deadzone 13 Hideout',
                               style: GoogleFonts.roboto(
-                                  color: AppColors.black2, fontSize: 18.sp),
+                                  color: Theme.of(context).brightness == Brightness.light
+                                  ? AppColors.black2
+                                  : AppColors.white,
+                                  fontSize: 18.sp),
                             ),
                           ),
                           Padding(
@@ -477,7 +513,9 @@ class _ProductPageScreenState extends State<ProductPageScreen> {
                                   width: 10.w,
                                 ),
                                 Text('@marterium',style: GoogleFonts.roboto(
-                                  color: Colors.black,
+                                  color: Theme.of(context).brightness == Brightness.light
+                                      ? AppColors.black2
+                                      : AppColors.white,
                                 ),)
                               ],
                             ),
@@ -498,13 +536,17 @@ class _ProductPageScreenState extends State<ProductPageScreen> {
                                 Column(
                                   children: [
                                     Text('0.49 BNB',style: GoogleFonts.roboto(
-                                      color: Colors.black,
+                                      color: Theme.of(context).brightness == Brightness.light
+                                          ? AppColors.black2
+                                          : AppColors.white,
                                     )),
                                     SizedBox(
                                       height: 4.h,
                                     ),
                                     Text('= \$140.5',style: GoogleFonts.roboto(
-                                      color: Colors.black,
+                                      color: Theme.of(context).brightness == Brightness.light
+                                          ? AppColors.black2
+                                          : AppColors.white,
                                     )),
                                   ],
                                 ),
@@ -519,7 +561,9 @@ class _ProductPageScreenState extends State<ProductPageScreen> {
                                     decoration: BoxDecoration(
                                         borderRadius:
                                         BorderRadius.circular(8.r),
-                                        color: Colors.grey.shade200),
+                                        color:Theme.of(context).brightness == Brightness.light
+                                        ? Colors.grey.shade200.withOpacity(0.75)
+                                        : AppColors.black2,),
                                     child: Row(
                                       mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
@@ -536,7 +580,9 @@ class _ProductPageScreenState extends State<ProductPageScreen> {
                                               : Icon(Icons.favorite),
                                         ),
                                         Text('34',style: GoogleFonts.roboto(
-                                          color: Colors.black,
+                                          color: Theme.of(context).brightness == Brightness.light
+                                            ? AppColors.black
+                                            : AppColors.white,
                                         ))
                                       ],
                                     ),

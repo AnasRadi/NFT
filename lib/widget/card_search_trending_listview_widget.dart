@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:nft/widget/button_widget.dart';
-
 import '../constants/app.colors.dart';
 
 class ContainerSearchTrendingListViewWidget extends StatelessWidget {
@@ -21,6 +19,9 @@ class ContainerSearchTrendingListViewWidget extends StatelessWidget {
             width: 366.w,
             height: 503.h,
             child: Card(
+              color:  Theme.of(context).brightness == Brightness.light
+                  ? Colors.white
+                  : AppColors.black,
                 elevation: 10.0,
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                 shape: RoundedRectangleBorder(

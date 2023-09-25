@@ -20,7 +20,9 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade100,
+      backgroundColor: Theme.of(context).brightness == Brightness.light
+          ? Colors.grey.shade100
+          : AppColors.black2,
       appBar: AppBar(
         iconTheme: IconThemeData.fallback(),
         automaticallyImplyLeading: true,
@@ -28,10 +30,15 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
         elevation: 0,
         centerTitle: true,
         title: Text('Favorites',style: GoogleFonts.roboto(
-          color: Colors.black,
+          color: Theme.of(context).brightness == Brightness.light
+              ? Colors.black
+              : AppColors.white,
         )),
         actions: [
           PopupMenuButton<String>(
+            color: Theme.of(context).brightness == Brightness.light
+          ? Colors.black
+          : AppColors.white,
             shape: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15.r),
                 borderSide: BorderSide(
@@ -94,7 +101,9 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                   child: Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(18.r),
-                        color: Colors.white),
+                        color: Theme.of(context).brightness == Brightness.light
+                            ? Colors.white
+                            : AppColors.black,),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -127,13 +136,15 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                                     decoration: BoxDecoration(
                                         borderRadius:
                                         BorderRadius.circular(8.r),
-                                        color: Colors.white),
+                                        color: Colors.white.withOpacity(0.75)),
                                     child: Row(
                                       mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
                                       children: [
-                                        Icon(Icons.access_time_outlined),
-                                        Text('05:22')
+                                        Icon(Icons.access_time_outlined,color: Colors.black,),
+                                        Text('05:22',style: GoogleFonts.roboto(
+                                          color: Colors.black,
+                                        ),)
                                       ],
                                     ),
                                   ))
@@ -148,7 +159,10 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                           child: Text(
                             'Deadzone 13 Hideout',
                             style: GoogleFonts.roboto(
-                                color: AppColors.black2, fontSize: 18.sp),
+                                color: Theme.of(context).brightness == Brightness.light
+                                    ? Colors.black
+                                    : AppColors.white,
+                                fontSize: 18.sp),
                           ),
                         ),
                         Padding(
@@ -165,7 +179,9 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                                 width: 10.w,
                               ),
                               Text('@marterium',style: GoogleFonts.roboto(
-                                color: Colors.black,
+                                color: Theme.of(context).brightness == Brightness.light
+                                    ? Colors.black
+                                    : AppColors.white,
                               ),)
                             ],
                           ),
@@ -186,13 +202,17 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                               Column(
                                 children: [
                                   Text('0.49 BNB',style: GoogleFonts.roboto(
-                                    color: Colors.black,
+                                    color: Theme.of(context).brightness == Brightness.light
+                                        ? Colors.black
+                                        : AppColors.white,
                                   )),
                                   SizedBox(
                                     height: 4.h,
                                   ),
                                   Text('= \$140.5',style: GoogleFonts.roboto(
-                                    color: Colors.black,
+                                    color: Theme.of(context).brightness == Brightness.light
+                                        ? Colors.black
+                                        : AppColors.white,
                                   )),
                                 ],
                               ),
@@ -207,7 +227,9 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                                   decoration: BoxDecoration(
                                       borderRadius:
                                       BorderRadius.circular(8.r),
-                                      color: Colors.grey.shade200),
+                                    color: Theme.of(context).brightness == Brightness.light
+                                        ? Colors.grey.shade200
+                                        : AppColors.black2,),
                                   child: GestureDetector(
                                     onTap: () {
                                       setState(() {
